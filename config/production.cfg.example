@@ -1,0 +1,4 @@
+MONGO_BILLING_DBNAME = "DB_NAME"
+MONGO_BILLING_PORT = PORT
+SECRET_KEY = "super secret key"
+DEBUG="true"
