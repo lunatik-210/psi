@@ -1,6 +1,55 @@
 <!doctype html>
-<title>Flaskr</title>
+<title>Flask</title>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap-theme.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slideshow.css') }}">
+
+<script src="{{ url_for('static', filename='js/jquery-2.1.3.min.js') }}"></script>
+<script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+
 <body>
-    <h1>PSI</h1>
+    <div class="header-container">
+        <div class="header">
+            <img class="first" src="{{ url_for('static', filename='images/header/h1.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h2.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h3.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h4.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h5.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h6.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h7.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h8.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h9.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h10.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h1.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h2.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h3.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h4.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h5.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h6.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h7.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h8.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h9.png') }}">
+            <img src="{{ url_for('static', filename='images/header/h10.png') }}">
+        </div>
+    </div>
+
+    <div class="line-separator"></div>
+
     {% block body %}{% endblock %}
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="col-md-2 left_menu">
+          <!--Sidebar content-->
+        </div>
+        <div class="col-md-8 content">
+          <!--Body content-->
+        </div>
+        <div class="col-md-2 right_menu">
+          <!--Body content-->
+        </div>
+      </div>
+    </div>
+
 </body>
