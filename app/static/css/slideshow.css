@@ -40,7 +40,7 @@
             animation: bannermove 70s linear infinite;
 }
  
-@keyframes "bannermove" {
+@keyframes bannermove {
  0% {
     margin-left: 0px;
  }
@@ -60,7 +60,7 @@
  
 }
  
-@-webkit-keyframes "bannermove" {
+@-webkit-keyframes bannermove {
  0% {
    margin-left: 0px;
  }
@@ -70,7 +70,7 @@
  
 }
  
-@-ms-keyframes "bannermove" {
+@-ms-keyframes bannermove {
  0% {
    margin-left: 0px;
  }
@@ -80,7 +80,7 @@
  
 }
  
-@-o-keyframes "bannermove" {
+@-o-keyframes bannermove {
  0% {
    margin-left: 0px;
  }
