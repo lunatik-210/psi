@@ -267,3 +267,7 @@ textarea:focus {
   background: rgba(255, 255, 255, 0.4);
   outline: 0;
 }
+
+.editor {
+    height: 600px;
+}
