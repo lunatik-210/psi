@@ -9,6 +9,8 @@
 <script src="{{ url_for('static', filename='js/jquery-2.1.3.min.js') }}"></script>
 <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
 
+{% block head %}{% endblock %}
+
 <body>
     {% block body %}{% endblock %}
 </body>
