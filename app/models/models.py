@@ -42,4 +42,4 @@ class MenuItem(db.Document):
     title = db.StringField()
     link = db.StringField()
     childsId = db.ListField(db.StringField())
-    meta = {'collenction': 'menu'}
+    meta = {'collection': 'menu'}
