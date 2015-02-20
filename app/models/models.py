@@ -23,13 +23,23 @@ class Speaker(db.Document):
     path_to_photo = db.StringField(max_length=128)
     meta = {'collection': 'speakers'}
 
+
 class Image(db.Document):
     description = db.StringField()
     image = db.ImageField()
     folder = db.StringField()
     meta = {'collection': 'image'}
 
+
 class Video(db.Document):
     path = db.StringField()
     folder = db.StringField()
     meta = {'collection': 'videos'}
+
+
+class MenuItem(db.Document):
+    id = db.StringField()
+    title = db.StringField()
+    link = db.StringField()
+    childsId = db.ListField(db.StringField())
+    meta = {'collenction': 'menu'}
