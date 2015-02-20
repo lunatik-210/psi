@@ -1,12 +1,16 @@
-# Important date and news
+# Important date
 # - date
 # - description
+
+# News item
+# - date
+# - content
 
 # Speaker
 # - name
 # - university
 # - country
-# - page_reference
+# - bio_reference_link
 # - description
 # - path_to_photo
 
@@ -18,3 +22,4 @@
 # Video
 # - path
 # - description
+
