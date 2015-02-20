@@ -33,28 +33,22 @@
 
         <div class="col-md-3">
             <div class="container-fluid right_menu">
-                <h1>News</h1>
-                <span>asd asd asd</span><br>    
-                <span>asd asd asd</span><br>
-                <span>asd asd asd</span><br>
-                <span>asd asd asd</span><br>
-                <span>asd asd asd</span><br>
-                <span>asd asd asd</span><br><br>    
+                <h1>Dates</h1>
+                {% for post in dates %}
+                <b><span>{{ post.date }}</span><br>  </b>
+                <span>{{ post.description }}</span><br>
+                <br>
+                {% endfor %}
             </div>
             <br>
             <div class="container-fluid right_menu">
-                <h1>Events</h1>             
-                <span>asd asd asd</span><br>
-                <span>asd asd asd</span><br>   
-                <span>asd asd asd</span><br>
-                <span>asd asd asd</span><br>
-                <span>asd asd asd</span><br>
-                <span>asd asd asd</span><br>
-                <span>asd asd asd</span><br>   
-                <span>asd asd asd</span><br>
-                <span>asd asd asd</span><br>
-                <span>asd asd asd</span><br>
-                <span>asd asd asd</span><br><br>
+                <h1>News</h1>
+                {% for news_item in news %}
+                <b><span>{{ news_item.date }}</span><br></b>
+                <span>{{ news_item.content }}</span><br>
+                <br>
+                {% endfor %}
+                <br>
             </div>
 
         </div>
