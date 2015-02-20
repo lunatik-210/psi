@@ -33,3 +33,10 @@ class Video(db.Document):
     path = db.StringField()
     folder = db.StringField()
     meta = {'collection': 'videos'}
+
+class MenuItem(db.Document):
+    id = db.StringField()
+    title = db.StringField()
+    link = db.StringField()
+    childsId = db.ListField(db.StringField())
+    meta = {'collenction': 'menu'}
