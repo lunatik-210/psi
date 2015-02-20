@@ -1,0 +1,25 @@
+.content
+{
+    height: 600px;
+    background: #C6BAE0;
+}
+
+.left_menu
+{
+
+}
+
+.right_menu
+{
+    height: 600px;
+    background: #BAE0DC;
+}
+
+.inline
+{
+    display: inline;
+}
+
+.header_sep {
+   content:url(/static/images/header_sep.png);
+}​
