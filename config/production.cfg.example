@@ -1,4 +1,5 @@
-MONGO_PSI_DBNAME = "DB_NAME"
-MONGO_PSI_PORT = PORT
-SECRET_KEY = "super secret key"
+MONGODB_DB = "psi"
+MONGODB_HOST = "127.0.0.1"
+MONGODB_PORT = 27017
+SECRET_KEY = "SuperSecretKey"
 DEBUG="true"
