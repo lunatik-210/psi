@@ -17,10 +17,10 @@
 <div class="line-separator"></div>
 <div class="header_sep"></div>
 <div>
-    <p class="inline"><a href="admin">admin</a></p> |
     {% if not session.logged_in %}
     <a href="auth/login">log in</a>
     {% else %}
+    <p class="inline"><a href="admin">admin</a></p> |
     <a href="auth/logout">log out</a>
     {% endif %}
     <!--<p class="inline"><a href="auth/login">login</a></p>-->
