@@ -1,7 +1,6 @@
 from . import admin
 
-from views import hello_world, login
+from views import login, logout
 
-
-admin.add_url_rule('/', 'hello_world', hello_world, methods=['GET'])
-admin.add_url_rule('/login', 'login', login, methods=['GET'])
+admin.add_url_rule('/login', 'login', login, methods=['GET','POST'])
+admin.add_url_rule('/logout', 'logout', logout, methods=['GET'])

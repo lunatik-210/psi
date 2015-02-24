@@ -2,9 +2,11 @@ from flask import Flask
 from flask.ext.mongoengine import MongoEngine
 from flask.ext.admin.contrib.mongoengine import ModelView
 from flask.ext.admin import Admin
+from flask.ext.login import LoginManager
 import os
 
 db = MongoEngine()
+login_manager = LoginManager()
 from app.models.models import ImportantDate
 
 def create_app(config=None):
@@ -30,7 +32,11 @@ def create_app(config=None):
     from main import main as site_blueprint
     app.register_blueprint(site_blueprint)
 
-    # from admin import admin as admin_blueprint
-    # app.register_blueprint(admin_blueprint, url_prefix='/admin')
+    login_manager.init_app(app)
+    from admin.views import user_loader as callback
+    login_manager.user_loader(callback)
+
+    from admin import admin as admin_blueprint
+    app.register_blueprint(admin_blueprint, url_prefix='/auth')
 
     return app
