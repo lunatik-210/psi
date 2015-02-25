@@ -18,13 +18,11 @@
 <div class="header_sep"></div>
 <div>
     {% if not session.logged_in %}
-    <a href="auth/login">log in</a>
+    <a href="{{ url_for('auth.login') }}">log in</a>
     {% else %}
     <p class="inline"><a href="admin">admin</a></p> |
-    <a href="auth/logout">log out</a>
+    <a href="{{ url_for('auth.logout') }}">log out</a>
     {% endif %}
-    <!--<p class="inline"><a href="auth/login">login</a></p>-->
-    <!--<p class="inline"><a href="auth/logout">logout</a></p>-->
 </div>
 
 <div class="container-fluid">
