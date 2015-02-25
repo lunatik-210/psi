@@ -7,6 +7,7 @@ import os
 
 db = MongoEngine()
 login_manager = LoginManager()
+
 from app.models.models import ImportantDate
 
 def create_app(config=None):
@@ -32,11 +33,7 @@ def create_app(config=None):
     from main import main as site_blueprint
     app.register_blueprint(site_blueprint)
 
-    login_manager.init_app(app)
-    from admin.views import user_loader as callback
-    login_manager.user_loader(callback)
-
-    from admin import admin as admin_blueprint
-    app.register_blueprint(admin_blueprint, url_prefix='/auth')
+    from auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint, url_prefix='/auth')
 
     return app

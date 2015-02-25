@@ -1,13 +1,10 @@
-from flask import session, request, redirect, render_template, flash
+from flask import session, request, redirect, render_template
 
 from flask.ext.login import login_user, current_user, logout_user
 
-from app.admin.singnin_form import SigninForm
+from singnin_form import SigninForm
 from app.models.models import User
 
-
-def hello_world():
-    return render_template('admin.html')
 
 def logout():
     if current_user.is_authenticated():
@@ -15,6 +12,7 @@ def logout():
         session.pop('username')
         logout_user()
     return redirect("/")
+
 
 def login():
     if request.method == 'GET':
@@ -37,6 +35,7 @@ def login():
             return redirect("admin")
         return render_template('login.html', signin_form=form)
     # # if bcrypt.check_password_hash(user.password, password):
+
 
 def user_loader(user_name):
     return User.objects(user_name=user_name).first()

@@ -1,6 +1,6 @@
 from . import main
 
-from views import hello_world
+from views import main as main_page
 
 
-main.add_url_rule('/', 'hello_world', hello_world, methods=['GET'])
+main.add_url_rule('/', 'main', main_page, methods=['GET'])
