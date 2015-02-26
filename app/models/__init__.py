@@ -23,3 +23,4 @@
 # - path
 # - description
 
+from models import Page, ImportantDate, NewsItem, Speaker, Image, Video, MenuItem, User

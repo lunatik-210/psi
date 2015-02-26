@@ -2,6 +2,11 @@ from app import db
 import datetime
 
 
+class Page(db.Document):
+    title = db.StringField(max_length=256)
+    text = db.StringField()
+    meta = {'collection': 'pages'}
+
 class ImportantDate(db.Document):
     date = db.DateTimeField(default=datetime.datetime.now)
     description = db.StringField(max_length=256)
