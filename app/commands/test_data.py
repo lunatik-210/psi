@@ -19,7 +19,7 @@ def create():
 def delete():
     "Delete all data from database"
     User.drop_collection()
-    save.drop_collection()
+    Video.drop_collection()
 
 
 @test_data.command
