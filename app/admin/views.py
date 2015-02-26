@@ -26,6 +26,10 @@ class VideoView(BaseModelView):
 	pass
 
 
+class NewsView(BaseModelView):
+	pass
+
+
 class PageAdminView(BaseModelView):
     	form_overrides = dict(text=CKTextAreaField)
         create_template = 'create.html'

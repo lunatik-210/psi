@@ -39,8 +39,8 @@
         </div>
 
         <div class="col-md-3">
+            <h1>Dates</h1>
             <div class="container-fluid right_menu">
-                <h1>Dates</h1>
                 {% for post in dates %}
                 <b><span>{{ post.date }}</span><br>  </b>
                 <span>{{ post.description }}</span><br>
@@ -48,8 +48,8 @@
                 {% endfor %}
             </div>
             <br>
+            <h1>News</h1>
             <div class="container-fluid right_menu">
-                <h1>News</h1>
                 {% for news_item in news %}
                 <b><span>{{ news_item.date }}</span><br></b>
                 <span>{{ news_item.content }}</span><br>

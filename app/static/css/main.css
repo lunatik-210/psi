@@ -11,8 +11,13 @@
 
 .right_menu
 {
+    border-color: gray;
+    border-style: dashed;
+    border-width: 3px;
     height: auto;
-    background: #BAE0DC;
+    padding-top: 10px;
+    /*background: #BAE0DC;*/
+
 }
 
 .inline
