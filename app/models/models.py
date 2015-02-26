@@ -32,8 +32,8 @@ class Image(db.Document):
 
 
 class Video(db.Document):
-    path = db.StringField()
-    folder = db.StringField()
+    path = db.StringField(max_length=256)
+    folder = db.StringField(max_length=256)
     meta = {'collection': 'videos'}
 
 

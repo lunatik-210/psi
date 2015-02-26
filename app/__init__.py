@@ -1,6 +1,7 @@
 from flask import Flask
 from flask.ext.mongoengine import MongoEngine
 from flask.ext.login import LoginManager
+
 import os
 
 db = MongoEngine()

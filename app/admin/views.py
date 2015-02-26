@@ -9,3 +9,7 @@ class BaseModelView(ModelView):
 
 class ImportantDateView(BaseModelView):
 	pass
+
+
+class VideoView(BaseModelView):
+	pass
