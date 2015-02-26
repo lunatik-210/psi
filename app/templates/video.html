@@ -20,8 +20,8 @@
             $('.modal-{{ loop.index }}').on('hidden.bs.modal', function () 
             {
                 var myPlayer = videojs('video-{{ loop.index }}');
-                myPlayer.pause();
                 myPlayer.currentTime(0);
+                myPlayer.pause();
             });
         </script>
     {% endfor %}
