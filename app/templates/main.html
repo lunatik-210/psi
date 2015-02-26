@@ -1,13 +1,16 @@
-{% extends "index.html" %}
+ {% extends "index.html" %}
 
 {% block head %}
 
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slideshow.css') }}">
-
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='video-js/video-js.css') }}">
 
 <script src="{{ url_for('static', filename='wysihtml5/parser_rules/advanced.js') }}"></script>
+<script src="{{ url_for('static', filename='video-js/video.js') }}"></script>
+<script src="{{ url_for('static', filename='js/vjs.youtube.js') }}"></script>
+
 {% endblock %}
 
 {% block body %}
@@ -33,6 +36,15 @@
 
         <div class="col-md-7 content">
             <h1>Content</h1>
+
+            <ul>
+                {% for entry in entries %}
+                    <li><h2>{{ entry.title }}</h2>{{ entry.text|safe }}
+                {% else %}
+                    <li><em>Unbelievable.  No entries here so far</em>
+                {% endfor %}
+            </ul>
+
         </div>
 
         <div class="col-md-3">
