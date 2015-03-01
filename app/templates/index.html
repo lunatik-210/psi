@@ -18,12 +18,13 @@
 <div class="header_sep"></div>
 <div>
     {% if not session.logged_in %}
-    <a href="{{ url_for('auth.login') }}">log in</a>
+    <a href="{{ url_for('auth.login') }}">{{_('Log in')}}</a>
     {% else %}
-    <p class="inline"><a href="admin">admin</a></p> |
-    <a href="{{ url_for('auth.logout') }}">log out</a>
+    <p class="inline"><a href="admin">{{_('Admin Page')}}</a></p> |
+    <a href="{{ url_for('auth.logout') }}">{{_('Log out')}}</a>
     {% endif %}
 </div>
+
 
 <div class="container-fluid">
     <div class="row-fluid">
@@ -39,7 +40,7 @@
         </div>
 
         <div class="col-md-3">
-            <h1>Dates</h1>
+            <h1>{{ _('Dates') }}</h1>
             <div class="container-fluid right_menu">
                 {% for post in dates %}
                 <b><span>{{ post.date }}</span><br>  </b>
@@ -48,7 +49,7 @@
                 {% endfor %}
             </div>
             <br>
-            <h1>News</h1>
+            <h1>{{ _('News') }}</h1>
             <div class="container-fluid right_menu">
                 {% for news_item in news %}
                 <b><span>{{ news_item.date }}</span><br></b>
