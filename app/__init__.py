@@ -1,14 +1,17 @@
-from flask import Flask, request, session
+import os
+
+from flask import Flask, request
 from flask.ext.mongoengine import MongoEngine
 from flask.ext.login import LoginManager
 from flask.ext.babelex import Babel
-import os
-
-LOCALE_TOKEN='locale'
+from flask import current_app
+from app import constants
+from app.languages import LANGUAGES
 
 db = MongoEngine()
 login_manager = LoginManager()
 babel = Babel()
+
 
 def create_app(config=None):
     app = Flask(__name__)
@@ -36,12 +39,12 @@ def create_app(config=None):
     babel.init_app(app)
     return app
 
+
 @babel.localeselector
 def get_locale():
-    return session[LOCALE_TOKEN]
+    return request.cookies.get(constants.LOCALE_TOKEN) or constants.DEFAULT_LOCALE
+    # return request.accept_languages.best_match(LANGUAGES.keys())
 
 # @babel.timezoneselector
 # def get_timezone():
-#     user = getattr(g, 'user', None)
-#     if user is not None:
-#         return user.timezone
+#     pass
