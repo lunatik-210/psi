@@ -36,4 +36,6 @@ class NewsView(BaseModelView):
 
 class PageAdminView(BaseModelView):
     form_overrides = dict(text=CKTextAreaField)
-    list_template = 'admin_page.html'
+    #list_template = 'admin_page.html'
+    create_template = 'create.html'
+    edit_template = 'edit.html'
