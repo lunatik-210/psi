@@ -1,15 +1,26 @@
-from flask import render_template
+import datetime
+
+from flask import render_template, request, make_response
 
 from app.models.models import ImportantDate, NewsItem, Video
+from app import constants
 
 
 def main():
-    return render_template('main.html', 
-                            dates=ImportantDate.objects.all(),
-                            news=NewsItem.objects.all())
+    locale = request.cookies.get(constants.LOCALE_TOKEN)
+    template = render_template('main.html',
+                               dates=ImportantDate.objects.all(),
+                               news=NewsItem.objects.all())
+    resp = make_response(template)
+
+    if not locale:
+        resp.set_cookie(constants.LOCALE_TOKEN, constants.DEFAULT_LOCALE,
+                        expires=datetime.datetime.now() + datetime.timedelta(days=constants.COOKIE_LIFETIME_DAYS))
+    return resp
+
 
 def video():
-    return render_template('video.html', 
-                            dates=ImportantDate.objects.all(),
-                            news=NewsItem.objects.all(),
-                            videos=Video.objects.all())
+    return render_template('video.html',
+                           dates=ImportantDate.objects.all(),
+                           news=NewsItem.objects.all(),
+                           videos=Video.objects.all())

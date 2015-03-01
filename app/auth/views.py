@@ -1,15 +1,15 @@
 from flask import session, request, redirect, render_template
-
 from flask.ext.login import login_user, current_user, logout_user
 
 from singnin_form import SigninForm
 from app.models.models import User
 
+LOGGED_IN_TOKEN = 'logged_in'
+
 
 def logout():
     if current_user.is_authenticated():
-        session.pop('logged_in')
-        session.pop('username')
+        session.pop(LOGGED_IN_TOKEN)
         logout_user()
     return redirect("/")
 
@@ -30,11 +30,10 @@ def login():
                 form.password.errors.append('Passwords did not match')
                 return render_template('login.html', signin_form=form)
             login_user(user, remember=form.remember_me.data)
-            session['logged_in'] = True
-            session['username'] = user.user_name
+            session[LOGGED_IN_TOKEN] = True
             return redirect("admin")
         return render_template('login.html', signin_form=form)
-    # # if bcrypt.check_password_hash(user.password, password):
+        # # if bcrypt.check_password_hash(user.password, password):
 
 
 def user_loader(user_name):
