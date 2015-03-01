@@ -1,0 +1,28 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>Video</h1>
+
+    {% for video in videos %}
+        <div class="b-images">
+            <img type="button" data-toggle="modal" data-target=".modal-{{ loop.index }}" src="http://img.youtube.com/vi/{{ video.path }}/mqdefault.jpg" alt="">
+            <img>
+            <div class="modal fade modal-{{ loop.index }}" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <video id="video-{{ loop.index }}" src="modal-{{ loop.index }}" class="video-js vjs-default-skin" controls preload="auto" width="640" height="480" data-setup='{ "techOrder": ["youtube"], "src": "http://www.youtube.com/watch?v={{ video.path }}" }'>
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('.modal-{{ loop.index }}').on('hidden.bs.modal', function () 
+            {
+                var myPlayer = videojs('video-{{ loop.index }}');
+                myPlayer.currentTime(0);
+                myPlayer.pause();
+            });
+        </script>
+    {% endfor %}
+{% endblock %}
