@@ -46,10 +46,10 @@
             <div class="container-fluid right_menu">
                 {% for post in dates %}
                 <b><span>{{ post.date.strftime('%Y-%m-%d %H:%M:%S') }}</span><br>  </b>
-                {% if session.psi_locale == 'ru' %}
-                    <span>{{ post.description_ru }}</span><br>
+                {% if locale == 'ru' %}
+                    <span>{{ post.description_ru|safe }}</span><br>
                 {% else %}
-                    <span>{{ post.description }}</span><br>
+                    <span>{{ post.description|safe }}</span><br>
                 {% endif %}
                 <br>
                 {% endfor %}
@@ -59,14 +59,13 @@
             <div class="container-fluid right_menu">
                 {% for news_item in news %}
                 <b><span>{{ news_item.date.strftime('%Y-%m-%d %H:%M:%S') }}</span><br></b>
-                {% if session.psi_locale == 'ru' %}
-                    <span>{{ news_item.content_ru }}</span><br>
+                {% if locale == 'ru' %}
+                    <span>{{ news_item.content_ru|safe }}</span><br>
                 {% else %}
-                    <span>{{ news_item.content }}</span><br>
+                    <span>{{ news_item.content|safe }}</span><br>
                 {% endif %}
                 <br>
                 {% endfor %}
-                <br>
             </div>
 
         </div>

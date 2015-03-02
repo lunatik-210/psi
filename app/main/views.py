@@ -10,7 +10,8 @@ def main():
     locale = request.cookies.get(constants.LOCALE_TOKEN)
     template = render_template('main.html',
                                dates=ImportantDate.objects.all(),
-                               news=NewsItem.objects.all())
+                               news=NewsItem.objects.all(),
+                               locale=locale)
     resp = make_response(template)
 
     if not locale:
@@ -20,7 +21,9 @@ def main():
 
 
 def video():
+    locale = request.cookies.get(constants.LOCALE_TOKEN)
     return render_template('video.html',
                            dates=ImportantDate.objects.all(),
                            news=NewsItem.objects.all(),
-                           videos=Video.objects.all())
+                           videos=Video.objects.all(),
+                           locale=locale)
