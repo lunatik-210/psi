@@ -20,7 +20,7 @@ class BaseModelView(ModelView):
 
 
 class ImportantDateView(BaseModelView):
-    form_overrides = dict(description=CKTextAreaField)
+    form_overrides = dict(description=CKTextAreaField, description_ru=CKTextAreaField)
     create_template = 'create.html'
     edit_template = 'edit.html'
 
@@ -30,7 +30,7 @@ class VideoView(BaseModelView):
 
 
 class NewsView(BaseModelView):
-    form_overrides = dict(content=CKTextAreaField)
+    form_overrides = dict(content=CKTextAreaField, content_ru=CKTextAreaField)
     create_template = 'create.html'
     edit_template = 'edit.html'
 

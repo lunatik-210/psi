@@ -12,13 +12,15 @@ class Page(db.Document):
 
 class ImportantDate(db.Document):
     date = db.DateTimeField(default=datetime.datetime.now)
-    description = db.StringField(max_length=256)
+    description = db.StringField()
+    description_ru = db.StringField()
     meta = {'collection': 'important_dates'}
 
 
 class NewsItem(db.Document):
     date = db.DateTimeField(default=datetime.datetime.now)
     content = db.StringField()
+    content_ru = db.StringField()
     meta = {'collection': 'news'}
 
 
