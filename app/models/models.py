@@ -29,24 +29,35 @@ class Speaker(db.Document):
     first_name = db.StringField(max_length=64)
     last_name = db.StringField(max_length=64)
     university = db.StringField(max_length=256)
-    bio_reference_link = db.StringField(max_length=256)
     description = db.StringField()
+
+    first_name_ru = db.StringField(max_length=64)
+    last_name_ru = db.StringField(max_length=64)
+    university_ru = db.StringField(max_length=256)
+    description_ru = db.StringField()
+
+    bio_reference_link = db.StringField(max_length=256)
+
     # path_to_photo = db.StringField(max_length=128)
     photo = db.ImageField()
     meta = {'collection': 'speakers'}
 
 
 class Image(db.Document):
-    description = db.StringField()
+    name = db.StringField(max_length=256)
+    name_ru = db.StringField(max_length=256)
     image = db.ImageField()
-    folder = db.StringField()
+    tag = db.StringField(max_length=256)
+    tag_ru = db.StringField(max_length=256)
     meta = {'collection': 'image'}
 
 
 class Video(db.Document):
     url = db.StringField(max_length=256)
     name = db.StringField(max_length=256)
-    folder = db.StringField(max_length=256)
+    name_ru = db.StringField(max_length=256)
+    tag = db.StringField(max_length=256)
+    tag_ru = db.StringField(max_length=256)
     meta = {'collection': 'videos'}
 
 

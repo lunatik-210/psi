@@ -9,10 +9,10 @@ def create():
     user = User(user_name="admin", password="admin")
     user.save()
 
-    videos = [('qbWUXNPf65A', 'NAME1'), ('cBsMCDgd3lg', 'NAME2'),
-              ('KoyA0PStmls', 'NAME3'), ('AjfejT2DrJo', 'NAME4'), ('0WQTgIC1Pfs', 'NAME5'), ('0WQTgIC1Pfs', 'NAME6')]
+    videos = [('qbWUXNPf65A', 'NAME1', 'имя1'), ('cBsMCDgd3lg', 'NAME2', 'имя2'),
+              ('KoyA0PStmls', 'NAME3', 'имя3'), ('AjfejT2DrJo', 'NAME4', 'имя4'), ('0WQTgIC1Pfs', 'NAME5', 'имя5'), ('0WQTgIC1Pfs', 'NAME6', 'имя6')]
 
-    for url,name in videos:
+    for url,name,name_ru in videos:
         video = Video(url=url, name=name)
         video.save()
 
