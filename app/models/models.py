@@ -1,14 +1,15 @@
-from app import db
+import datetime
 
 from flask.ext.login import UserMixin
 
-import datetime
+from app import db
 
 
 class Page(db.Document):
     title = db.StringField(max_length=256)
     text = db.StringField()
     meta = {'collection': 'pages'}
+
 
 class ImportantDate(db.Document):
     date = db.DateTimeField(default=datetime.datetime.now)
@@ -30,7 +31,8 @@ class Speaker(db.Document):
     university = db.StringField(max_length=256)
     bio_reference_link = db.StringField(max_length=256)
     description = db.StringField()
-    path_to_photo = db.StringField(max_length=128)
+    # path_to_photo = db.StringField(max_length=128)
+    photo = db.ImageField()
     meta = {'collection': 'speakers'}
 
 
@@ -42,7 +44,8 @@ class Image(db.Document):
 
 
 class Video(db.Document):
-    path = db.StringField(max_length=256)
+    url = db.StringField(max_length=256)
+    name = db.StringField(max_length=256)
     folder = db.StringField(max_length=256)
     meta = {'collection': 'videos'}
 
@@ -63,7 +66,7 @@ class User(db.Document, UserMixin):
 
     """
     user_name = db.StringField()
-    password =db.StringField()
+    password = db.StringField()
     meta = {'collection': 'users'}
 
     def get_id(self):

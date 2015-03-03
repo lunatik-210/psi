@@ -9,10 +9,11 @@ def create():
     user = User(user_name="admin", password="admin")
     user.save()
 
-    videos = ['qbWUXNPf65A', 'cBsMCDgd3lg', 'KoyA0PStmls', 'AjfejT2DrJo', '0WQTgIC1Pfs', '0WQTgIC1Pfs']
+    videos = [('qbWUXNPf65A', 'NAME1'), ('cBsMCDgd3lg', 'NAME2'),
+              ('KoyA0PStmls', 'NAME3'), ('AjfejT2DrJo', 'NAME4'), ('0WQTgIC1Pfs', 'NAME5'), ('0WQTgIC1Pfs', 'NAME6')]
 
-    for v in videos:
-        video = Video(path=v)
+    for url,name in videos:
+        video = Video(url=url, name=name)
         video.save()
 
     news = [["The PSI'14 is open. Congratulations to the Conference participants and organizers! See some photographs taken at the opening.",
@@ -35,6 +36,7 @@ def create():
     for d in dates:
         date = ImportantDate(description=d[0], description_ru=d[1])
         date.save()
+
 
 
 @test_data.command

@@ -1,4 +1,5 @@
 from flask.ext.admin.contrib.mongoengine import ModelView
+from flask.ext.admin.model.template import macro
 from flask.ext.login import current_user
 
 from wtforms import fields, widgets
@@ -26,6 +27,7 @@ class ImportantDateView(BaseModelView):
 
 
 class VideoView(BaseModelView):
+    # column_formatters = dict(url=macro('render_price'))
     pass
 
 
