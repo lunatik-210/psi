@@ -16,13 +16,16 @@
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
+    {% endfor %}
+
+    <script type="text/javascript">
+        {% for video in videos %}
             $('.modal-{{ loop.index }}').on('hidden.bs.modal', function () 
             {
                 var myPlayer = videojs('video-{{ loop.index }}');
                 myPlayer.currentTime(0);
                 myPlayer.pause();
             });
-        </script>
-    {% endfor %}
+        {% endfor %}
+    </script>
 {% endblock %}

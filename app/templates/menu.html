@@ -1,6 +1,8 @@
 <ul class="menu dropdown-menu">
+    <li><a href="/">Welcome</a></li>
 
-    <li class="dropdown-submenu"> <a href="#">Pictures</a>
+    <li><a href="{{ url_for('main.video') }}">Video</a></li>
+    <li class="dropdown-submenu"> <a href="{{ url_for('main.pictures') }}">Pictures</a>
         <ul class="dropdown-menu">
             <li><a href="#">All participants</a></li>
             <li><a href="#">2014.06.24</a></li>
@@ -8,9 +10,6 @@
             <li><a href="#">2014.06.26</a></li>
         </ul>
     </li>
-
-    <li><a href="{{ url_for('main.video') }}">Video</a></li>
-    <li><a href="#">Welcome</a></li>
     <li><a href="http://www.easychair.org/smart-program/PSI2015/">Programme</a></li>
     <li><a href="#">Keynote Speakers</a></li>
     <li><a href="#">Accepted Papers</a></li>

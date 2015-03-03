@@ -1,44 +1,47 @@
-.header-container {
-    width: 100%;
-    overflow: hidden;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background: white;
+.header-container 
+{
+  width: 100%;
+  overflow: hidden;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background: white;
 }
 
-.header {
-    height: 140px;
-    width: 300%;
+.header 
+{
+  height: 140px;
+  width: 300%;
 }
  
-.header img {
-    max-height: 140px;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+.header img 
+{
+  max-height: 140px;
+  margin-right: 3px;
+  margin-left: 3px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
  
 .header img:hover {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
-    cursor: pointer;
- 
-    -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
-    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+  cursor: pointer;
+
+  -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
 }
 
 
 .line-separator
 {
-    height: 1px;
-
-    background: #717171;
-
-    border-bottom: 1px solid #313030;
+  height: 1px;
+  background: #717171;
+  border-bottom: 1px solid #313030;
 }
