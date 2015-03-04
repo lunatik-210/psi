@@ -3,10 +3,12 @@ from flask.ext.admin import expose, AdminIndexView
 from flask.ext.admin.contrib.mongoengine import ModelView
 from flask.ext.login import current_user, login_user, logout_user
 from wtforms import fields, widgets
-from app.constants import LOGGED_IN_TOKEN
 
 from app.models import User
 from app.admin.auth.singnin_form import SigninForm
+
+
+LOGGED_IN_TOKEN = 'logged_in'
 
 
 class CKTextAreaWidget(widgets.TextArea):
@@ -52,6 +54,7 @@ class NewsView(BaseModelView):
 class PageAdminView(BaseModelView):
     form_overrides = dict(text=CKTextAreaField)
     list_template = 'admin_page.html'
+
 
 class DefaultLoginView(AdminIndexView):
     @expose('/')
