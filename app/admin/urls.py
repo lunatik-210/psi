@@ -1,9 +1,9 @@
 from . import admin
 
-from views import ImportantDateView, VideoView, PageAdminView, NewsView, BaseModelView, SpeakersView
+from views import ImportantDateView, VideoView, PageAdminView, NewsView, BaseModelView, \
+    SpeakersView
 
 from app.models import ImportantDate, Page, Video, NewsItem, Image, Speaker
-
 
 admin.add_view(PageAdminView(Page, "Page", endpoint="page"))
 admin.add_view(ImportantDateView(ImportantDate, "ImportantDate", endpoint="important_date"))

@@ -4,7 +4,6 @@ from flask import Flask, request
 from flask.ext.mongoengine import MongoEngine
 from flask.ext.login import LoginManager
 from flask.ext.babelex import Babel
-from flask import current_app
 from app import constants
 from app.languages import LANGUAGES
 
@@ -28,9 +27,6 @@ def create_app(config=None):
 
     from main import main as site_blueprint
     app.register_blueprint(site_blueprint)
-
-    from auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint, url_prefix='/admin/auth')
 
     from admin import admin as admin_panel
     admin_panel.init_app(app)

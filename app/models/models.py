@@ -79,3 +79,4 @@ class User(db.Document, UserMixin):
     def get_id(self):
         """Return the email address to satisfy Flask-Login's requirements."""
         return self.user_name
+

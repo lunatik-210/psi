@@ -2,3 +2,5 @@ LOCALE_TOKEN = 'psi_locale'
 DEFAULT_LOCALE = 'en'
 
 COOKIE_LIFETIME_DAYS = 30
+
+LOGGED_IN_TOKEN = 'logged_in'

@@ -30,12 +30,7 @@
 </div>
 <br>
 <div>
-    {% if not session.logged_in %}
-        <a href="{{ url_for('auth.login') }}">{{_('Log in')}}</a>
-    {% else %}
-        <p class="inline"><a href="admin">{{_('Admin Page')}}</a></p> |
-        <a href="{{ url_for('auth.logout') }}">{{_('Log out')}}</a>
-    {% endif %}
+    <p class="inline"><a href="admin">{{_('Admin Page')}}</a></p>
 </div>
 
 <div class="container-fluid">
