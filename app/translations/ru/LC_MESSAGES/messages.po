@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-02 02:09+0300\n"
+"POT-Creation-Date: 2015-03-04 18:23+0300\n"
 "PO-Revision-Date: 2015-03-01 23:01+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -18,39 +18,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 
-#: app/templates/index.html:21
+#: app/templates/index.html:29
 msgid "ru"
 msgstr "en"
 
-#: app/templates/index.html:21
-msgid "asd"
-msgstr "русский"
-
-#: app/templates/index.html:21
-msgid "asdf"
-msgstr "english"
-
-#: app/templates/index.html:25
+#: app/templates/index.html:35
 msgid "Log in"
 msgstr "Зайти в систему"
 
-#: app/templates/index.html:27
+#: app/templates/index.html:37
 msgid "Admin Page"
 msgstr "Админка"
 
-#: app/templates/index.html:28
+#: app/templates/index.html:38
 msgid "Log out"
 msgstr "Выйти из системы"
 
-#: app/templates/index.html:47
+#: app/templates/index.html:55
 msgid "Dates"
 msgstr "Важные даты"
 
-#: app/templates/index.html:56
+#: app/templates/index.html:68
 msgid "News"
 msgstr "Свежие новости"
 
 #: app/templates/main.html:4
 msgid "Content"
 msgstr "Информация"
+
+#: app/templates/menu.html:2
+msgid "Welcome"
+msgstr "Главная"
+
+#: app/templates/menu.html:5 app/templates/video.html:4
+msgid "Video"
+msgstr "Видео"
+
+#: app/templates/menu.html:19 app/templates/pictures.html:4
+msgid "Pictures"
+msgstr "Фотографии"
+
+#: app/templates/menu.html:33
+msgid "Programme"
+msgstr "Программа конференции"
+
+#: app/templates/menu.html:34
+msgid "Keynote Speakers"
+msgstr "Основные докладчики"
+
+#~ msgid "asd"
+#~ msgstr "русский"
+
+#~ msgid "asdf"
+#~ msgstr "english"
 
