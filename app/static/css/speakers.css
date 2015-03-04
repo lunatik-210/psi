@@ -1,0 +1,43 @@
+div.keynote-line 
+{
+    margin-bottom: 40px;
+    padding: 10px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+div.keynote-line:hover
+{
+    background-color: #E9F0EC;
+    -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+}
+
+div.keynote 
+{
+    float: left;
+    font-size: 90%;
+    text-align: center;
+    width: 240px;
+    margin-right: 40px;
+}
+
+div.keynote:hover {
+  cursor: pointer;
+}
+
+.keynote img 
+{
+  -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+  box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+}
+
+div.keynote-text 
+{
+    padding: 10px;
+}

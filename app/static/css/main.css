@@ -11,12 +11,26 @@
 
 .right_menu
 {
-    border-color: gray;
+    /*border-color: gray;
     border-style: dashed;
-    border-width: 3px;
+    border-width: 3px;*/
     height: auto;
     padding-top: 10px;
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     /*background: #BAE0DC;*/
+}
+
+.right_menu:hover
+{
+    background-color: #E9F0EC;
+    -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);    
 }
 
 .inline
@@ -75,7 +89,7 @@
 .banner
 {
 
-    margin: 50px 4px 10px 12px;
+    margin: 35px 4px 10px 4px;
     -webkit-box-shadow: 0px 0px 15px 0px rgba(52, 50, 109, 0.5);
     -moz-box-shadow:    0px 0px 15px 0px rgba(52, 50, 109, 0.5);
     box-shadow:         0px 0px 15px 0px rgba(52, 50, 109, 0.5);    

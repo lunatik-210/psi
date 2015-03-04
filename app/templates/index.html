@@ -7,8 +7,8 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slideshow.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/pictures.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/speakers.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='video-js/video-js.css') }}">
-
 
 <script src="{{ url_for('static', filename='photoswipe/photoswipe.min.js') }}"></script>
 <script src="{{ url_for('static', filename='photoswipe/photoswipe-ui-default.min.js') }}"></script>
@@ -16,7 +16,6 @@
 <script src="{{ url_for('static', filename='video-js/video.js') }}"></script>
 <script src="{{ url_for('static', filename='js/vjs.youtube.js') }}"></script>
 <script src="{{ url_for('static', filename='js/photo-swipe-initializer.js') }}"></script>
-
 
 {% endblock %}
 
@@ -43,7 +42,7 @@
     <div class="row-fluid">
         <div class="col-md-2 container left_menu">
             {% include "menu.html" %}
-            <img class = "banner" src="{{ url_for('static', filename='images/banner.jpg') }}">
+            <a href="/"><img class="banner" src="{{ url_for('static', filename='images/banner.jpg') }}"></a>
         </div>
 
         <div class="col-md-7 content">

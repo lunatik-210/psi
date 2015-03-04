@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-04 18:23+0300\n"
+"POT-Creation-Date: 2015-03-05 00:01+0300\n"
 "PO-Revision-Date: 2015-03-01 23:01+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -18,27 +18,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 
-#: app/templates/index.html:29
+#: app/templates/index.html:28
 msgid "ru"
 msgstr "en"
 
-#: app/templates/index.html:35
+#: app/templates/index.html:34
 msgid "Log in"
 msgstr "Зайти в систему"
 
-#: app/templates/index.html:37
+#: app/templates/index.html:36
 msgid "Admin Page"
 msgstr "Админка"
 
-#: app/templates/index.html:38
+#: app/templates/index.html:37
 msgid "Log out"
 msgstr "Выйти из системы"
 
-#: app/templates/index.html:55
+#: app/templates/index.html:54
 msgid "Dates"
 msgstr "Важные даты"
 
-#: app/templates/index.html:68
+#: app/templates/index.html:67
 msgid "News"
 msgstr "Свежие новости"
 
@@ -62,7 +62,7 @@ msgstr "Фотографии"
 msgid "Programme"
 msgstr "Программа конференции"
 
-#: app/templates/menu.html:34
+#: app/templates/menu.html:34 app/templates/speakers.html:4
 msgid "Keynote Speakers"
 msgstr "Основные докладчики"
 

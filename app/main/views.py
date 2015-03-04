@@ -2,7 +2,7 @@ import datetime
 
 from flask import render_template, request, make_response, send_file, abort
 
-from app.models.models import ImportantDate, NewsItem, Video, Image
+from app.models.models import ImportantDate, NewsItem, Video, Image, Speaker
 from app import constants
 from io import BytesIO
 
@@ -67,9 +67,23 @@ def pictures():
         images=images)
 
 
+def speakers():
+    locale = request.cookies.get(constants.LOCALE_TOKEN)
+    return render_template('speakers.html',
+        dates=ImportantDate.objects.all(),
+        news=NewsItem.objects.all(),
+        locale=locale,
+        video_tags=get_video_tags(),
+        picture_tags=get_picture_tags(),
+        speakers=Speaker.objects.all())    
+
+
 def images(filename=None):
     if filename:
         for image in Image.objects():
             if filename == image.image.name:
                 return send_file(BytesIO(image.image.read()), mimetype='image')
+        for spekaer in Speaker.objects():
+            if filename == spekaer.photo.name:
+                return send_file(BytesIO(spekaer.photo.read()), mimetype='image')
     abort(404)

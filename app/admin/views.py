@@ -26,6 +26,14 @@ class ImportantDateView(BaseModelView):
     edit_template = 'edit.html'
 
 
+class SpeakersView(BaseModelView):
+    column_list = ('photo', 'name', 'name_ru', 'country', 'country_ru', 'bio_reference_link')
+
+    form_overrides = dict(description=CKTextAreaField, description_ru=CKTextAreaField)
+    create_template = 'create.html'
+    edit_template = 'edit.html'
+
+
 class VideoView(BaseModelView):
     # column_formatters = dict(url=macro('render_price'))
     pass

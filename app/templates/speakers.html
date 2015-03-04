@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>{{ _('Keynote Speakers') }}</h1>
+
+    {% for speaker in speakers %}
+      {% if locale == 'en' %}
+        <div class="keynote-line">
+          <div class="keynote"><a href="{{ speaker.bio_reference_link }}"><img src="images/{{ speaker.photo.name }}" class="frame" alt="{{ speaker.name }}"></a> <a name="Edmund M. Clarke"></a>
+            <p><a href="{{ speaker.bio_reference_link }}"><em>{{ speaker.name }}</em><br>
+              {{ speaker.country }}</a></p>
+          </div>
+
+          <div class="keynote-text">
+            {{ speaker.description|safe }}
+          </div>
+        </div>
+        {% else %}
+        <div class="keynote-line">
+          <div class="keynote"><a href="{{ speaker.bio_reference_link }}"><img src="images/{{ speaker.photo.name }}" class="frame" alt="{{ speaker.name }}"></a> <a name="Edmund M. Clarke"></a>
+            <p><a href="{{ speaker.bio_reference_link }}"><em>{{ speaker.name_ru }}</em><br>
+              {{ speaker.country_ru }}</a></p>
+          </div>
+          <div class="keynote-text">
+            {{ speaker.description_ru|safe }}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+{% endblock %}
