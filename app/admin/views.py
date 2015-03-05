@@ -42,7 +42,8 @@ class SpeakersView(BaseModelView):
 
 
 class VideoView(BaseModelView):
-    list_template = "display_video.html"
+    list_template = "video/video_list.html"
+    create_template = "video/video_create.html"
     column_formatters = dict(url=macro('render_url'))
     pass
 
