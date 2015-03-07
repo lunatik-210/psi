@@ -4,7 +4,7 @@ from flask import render_template, request, make_response
 
 from app.models.models import ImportantDate, NewsItem, Video
 from app import constants
-
+from app.models import  Page
 
 def main():
     locale = request.cookies.get(constants.LOCALE_TOKEN)

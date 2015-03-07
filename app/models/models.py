@@ -8,6 +8,7 @@ import datetime
 class Page(db.Document):
     title = db.StringField(max_length=256)
     text = db.StringField()
+    parent = db.StringField(max_length=256)
     meta = {'collection': 'pages'}
 
 class ImportantDate(db.Document):
