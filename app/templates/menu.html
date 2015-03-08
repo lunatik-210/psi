@@ -32,66 +32,24 @@
 
     <li><a href="http://www.easychair.org/smart-program/PSI2015/">{{ _('Programme') }}</a></li>
     <li><a href="{{ url_for('main.speakers') }}">{{ _('Keynote Speakers') }}</a></li>
-    <li><a href="#">Accepted Papers</a></li>
-    <li><a href="#">Call for paper (PDF)</a></li>
 
-    <li class="dropdown-submenu"> <a href="#">Committees</a>
+    {% for key in menu.keys() %}
+        {% if locale == 'en' %}
+            <li {% if menu[key] %} class="dropdown-submenu" {% endif %} > <a href="{{ url_for('main.main') }}">{{ menu_items[key].title }}</a>
+        {% else %}
+            <li {% if menu[key] %} class="dropdown-submenu" {% endif %} > <a href="{{ url_for('main.main') }}">{{ menu_items[key].title_ru }}</a>
+        {% endif %}
+
+        {% if menu[key] %}
         <ul class="dropdown-menu">
-            <li><a href="#">Organizers</a></li>
-            <li><a href="#">Steering Committee</a></li>
-            <li><a href="#">Programme Committee</a></li>
+            {% for sub_key in menu[key] %}
+                {% if locale == 'en' %}
+                    <li><a href="{{ url_for('main.main') }}">{{ menu_items[sub_key].title }}</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('main.main') }}">{{ menu_items[sub_key].title_ru }}</a></li>
+                {% endif %}
+            {% endfor %}
         </ul>
-    </li>
-
-    <li class="dropdown-submenu"> <a href="#">Conference Topics</a>
-        <ul class="dropdown-menu">
-            <li><a href="#">Instructions</a></li>
-            <li><a href="#">Important Dates</a></li>
-            <li><a href="#">Submission Site</a></li>
-        </ul>
-    </li>
-
-    <li><a href="#">Submissions</a></li>
-    <li><a href="#">Proceedings</a></li>
-
-    <li class="dropdown-submenu">
-        <a href="#">Sponsors</a>
-        <ul class="dropdown-menu">
-            <li><a href="#">Sponsoring Organizations</a></li>
-            <li><a href="#">Sponsorship Package</a></li>
-        </ul>
-    </li>
-
-    <li class="dropdown-submenu">
-        <a href="#">General informations</a>
-        <ul class="dropdown-menu">
-            <li><a href="#">Travelling</a></li>
-            <li><a href="#">Hotel Accommodation</a></li>
-            <li><a href="#">Location</a></li>
-            <li><a href="#">Cultural programme</a></li>
-            <li><a href="#">Contact Persons</a></li>
-        </ul>
-    </li>
-
-    <li><a href="#">Poster Instructions</a></li>
-
-    <li class="dropdown-submenu">
-        <a href="#">Satellite Workshops</a>
-        <ul class="dropdown-menu">
-            <li><a href="#">Educational Informatics</a></li>
-            <li><a href="#">Science Intensive Applied Software</a></li>
-        </ul>
-    </li>
-
-    <li class="dropdown-submenu">
-        <a href="#">Previous PSI Editions</a>
-        <ul class="dropdown-menu">
-            <li><a href="#">PSI'11</a></li>
-            <li><a href="#">PSI'06</a></li>
-            <li><a href="#">PSI'09</a></li>
-            <li><a href="#">PSI'03</a></li>
-            <li><a href="#">PSI'01</a></li>
-            <li><a href="#">PSI'99</a></li>
-        </ul>
-    </li>
+        {% endif %}
+    {% endfor %}
 </ul>

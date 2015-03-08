@@ -24,7 +24,10 @@ class CKTextAreaField(fields.TextAreaField):
 
 class PageForm(wtf.Form):
     title = fields.TextField('Title')
+    title_ru = fields.TextField('TitleRu')
     text = CKTextAreaField('Text')
+    text_ru = CKTextAreaField('TextRu')
+
     #parent = fields.SelectField('Parent')
     '''def __init__(self, lst):
         super(PageForm, self)
@@ -64,7 +67,7 @@ class NewsView(BaseModelView):
 
 
 class PageAdminView(BaseModelView):
-    form_overrides = dict(text=CKTextAreaField)
+    form_overrides = dict(text=CKTextAreaField, text_ru=CKTextAreaField)
 
     create_template = 'createPage.html'
     edit_template = 'edit.html'

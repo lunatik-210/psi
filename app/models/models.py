@@ -7,7 +7,9 @@ from app import db
 
 class Page(db.Document):
     title = db.StringField(max_length=256)
+    title_ru = db.StringField(max_length=256)
     text = db.StringField()
+    text_ru = db.StringField()
     parent = db.StringField(max_length=256)
     meta = {'collection': 'pages'}
 
@@ -61,6 +63,7 @@ class Video(db.Document):
 class MenuItem(db.Document):
     id = db.StringField()
     title = db.StringField()
+    title_ru = db.StringField()
     link = db.StringField()
     childsId = db.ListField(db.StringField())
     meta = {'collection': 'menu'}

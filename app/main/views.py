@@ -16,7 +16,30 @@ def get_tags(model):
             tags.append(dict(en=object.tag, ru=object.tag_ru))
     if len(filter) == 0:
         return None
-    return tags    
+    return tags
+
+
+def get_menu():
+    menu = {}
+    menu_items = {}
+    print Page.objects()
+    for object in Page.objects():
+        menu_items[str(object.id)] = object
+        if object.parent == "None":
+            menu[str(object.id)] = []
+
+    for object in Page.objects():
+        if object.parent != "None":
+            menu[str(object.parent)].append(str(object.id))
+
+    for key in menu.keys():
+        if len(menu[key]) == 0:
+            menu[key] = None
+
+    print menu
+    print menu_items
+
+    return menu, menu_items
 
 
 def get_picture_tags():
@@ -29,11 +52,14 @@ def get_video_tags():
 
 def main():
     locale = request.cookies.get(constants.LOCALE_TOKEN)
+    menu, menu_items = get_menu()
     return render_template('main.html',
         dates=ImportantDate.objects.all(),
         news=NewsItem.objects.all(),
         locale=locale,
         video_tags=get_video_tags(),
+        menu=menu,
+        menu_items=menu_items,
         picture_tags=get_picture_tags())
 
 
@@ -42,13 +68,15 @@ def video():
     videos = Video.objects.all()
     if tag:
         videos = Video.objects.filter(tag=tag).all()
-
     locale = request.cookies.get(constants.LOCALE_TOKEN)
+    menu, menu_items = get_menu()
     return render_template('video.html',
         dates=ImportantDate.objects.all(),
         news=NewsItem.objects.all(),
         video_tags=get_video_tags(),
         picture_tags=get_picture_tags(),
+        menu=menu,
+        menu_items=menu_items,
         videos=videos)
 
 
@@ -57,25 +85,30 @@ def pictures():
     images = Image.objects.all()
     if tag:
         images = Image.objects.filter(tag=tag).all()
-
     locale = request.cookies.get(constants.LOCALE_TOKEN)
+    menu, menu_items = get_menu()
     return render_template('pictures.html',
         dates=ImportantDate.objects.all(),
         news=NewsItem.objects.all(),
         locale=locale,
         video_tags=get_video_tags(),
         picture_tags=get_picture_tags(),
+        menu=menu,
+        menu_items=menu_items,
         images=images)
 
 
 def speakers():
     locale = request.cookies.get(constants.LOCALE_TOKEN)
+    menu, menu_items = get_menu()
     return render_template('speakers.html',
         dates=ImportantDate.objects.all(),
         news=NewsItem.objects.all(),
         locale=locale,
         video_tags=get_video_tags(),
         picture_tags=get_picture_tags(),
+        menu=menu,
+        menu_items=menu_items,
         speakers=Speaker.objects.all())    
 
 
