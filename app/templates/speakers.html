@@ -1,70 +1,31 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<entry xmlns='http://www.w3.org/2005/Atom' xmlns:app='http://purl.org/atom/app#'
-       xmlns:yt='http://gdata.youtube.com/schemas/2007' xmlns:gd='http://schemas.google.com/g/2005'
-       xmlns:media='http://search.yahoo.com/mrss/'>
-    <id>http://gdata.youtube.com/feeds/api/videos/VA770wpLX-Q</id>
-    <published>2011-02-24T22:47:48.000Z</published>
-    <updated>2015-03-05T08:33:49.000Z</updated>
-    <app:control>
-        <yt:state name='restricted' reasonCode='limitedSyndication'>Syndication of this video was
-            restricted.
-        </yt:state>
-    </app:control>
-    <category scheme='http://schemas.google.com/g/2005#kind'
-              term='http://gdata.youtube.com/schemas/2007#video'/>
-    <category scheme='http://gdata.youtube.com/schemas/2007/categories.cat' term='Music'
-              label='Music'/>
-    <title type='text'>Dr. Dre - I Need A Doctor (Explicit) ft. Eminem, Skylar Grey</title>
-    <content type='text'>Music video by Dr. Dre performing I Need A Doctor featuring Eminem and
-        Skylar Grey (Explicit). © 2011 Aftermath Records
-        #VEVOCERTIFIED on Aug. 17, 2012. http://www.youtube.com/vevocertified
-    </content>
-    <link rel='alternate' type='text/html'
-          href='http://www.youtube.com/watch?v=VA770wpLX-Q&amp;feature=youtube_gdata'/>
-    <link rel='http://gdata.youtube.com/schemas/2007#video.related' type='application/atom+xml'
-          href='http://gdata.youtube.com/feeds/api/videos/VA770wpLX-Q/related'/>
-    <link rel='self' type='application/atom+xml'
-          href='http://gdata.youtube.com/feeds/api/videos/VA770wpLX-Q'/>
-    <author>
-        <name>DrDreVEVO</name>
-        <uri>http://gdata.youtube.com/feeds/api/users/DrDreVEVO</uri>
-    </author>
-    <gd:comments>
-        <gd:feedLink rel='http://gdata.youtube.com/schemas/2007#comments'
-                     href='http://gdata.youtube.com/feeds/api/videos/VA770wpLX-Q/comments'
-                     countHint='291356'/>
-    </gd:comments>
-    <yt:hd/>
-    <media:group>
-        <media:category label='Music' scheme='http://gdata.youtube.com/schemas/2007/categories.cat'>
-            Music
-        </media:category>
-        <media:content
-                url='http://www.youtube.com/v/VA770wpLX-Q?version=3&amp;f=videos&amp;app=youtube_gdata'
-                type='application/x-shockwave-flash' medium='video' isDefault='true'
-                expression='full' duration='457' yt:format='5'/>
-        <media:description type='plain'>Music video by Dr. Dre performing I Need A Doctor featuring
-            Eminem and Skylar Grey (Explicit). © 2011 Aftermath Records
-            #VEVOCERTIFIED on Aug. 17, 2012. http://www.youtube.com/vevocertified
-        </media:description>
-        <media:keywords/>
-        <media:player
-                url='http://www.youtube.com/watch?v=VA770wpLX-Q&amp;feature=youtube_gdata_player'/>
-        <media:rating scheme='http://gdata.youtube.com/schemas/2007#mediarating'>2</media:rating>
-        <media:restriction type='country' relationship='deny'>DE</media:restriction>
-        <media:thumbnail url='http://i.ytimg.com/vi/VA770wpLX-Q/0.jpg' height='360' width='480'
-                         time='00:03:48.500'/>
-        <media:thumbnail url='http://i.ytimg.com/vi/VA770wpLX-Q/1.jpg' height='90' width='120'
-                         time='00:01:54.250'/>
-        <media:thumbnail url='http://i.ytimg.com/vi/VA770wpLX-Q/2.jpg' height='90' width='120'
-                         time='00:03:48.500'/>
-        <media:thumbnail url='http://i.ytimg.com/vi/VA770wpLX-Q/3.jpg' height='90' width='120'
-                         time='00:05:42.750'/>
-        <media:title type='plain'>Dr. Dre - I Need A Doctor (Explicit) ft. Eminem, Skylar Grey
-        </media:title>
-        <yt:duration seconds='457'/>
-    </media:group>
-    <gd:rating average='4.880493' max='5' min='1' numRaters='895446'
-               rel='http://schemas.google.com/g/2005#overall'/>
-    <yt:statistics favoriteCount='0' viewCount='189149071'/>
-</entry>
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>{{ _('Keynote Speakers') }}</h1>
+
+    {% for speaker in speakers %}
+      {% if locale == 'en' %}
+        <div class="keynote-line">
+          <div class="keynote"><a href="{{ speaker.bio_reference_link }}"><img src="images/{{ speaker.photo.name }}" class="frame" alt="{{ speaker.name }}"></a> <a name="Edmund M. Clarke"></a>
+            <p><a href="{{ speaker.bio_reference_link }}"><em>{{ speaker.name }}</em><br>
+              {{ speaker.country }}</a></p>
+          </div>
+
+          <div class="keynote-text">
+            {{ speaker.description|safe }}
+          </div>
+        </div>
+        {% else %}
+        <div class="keynote-line">
+          <div class="keynote"><a href="{{ speaker.bio_reference_link }}"><img src="images/{{ speaker.photo.name }}" class="frame" alt="{{ speaker.name }}"></a> <a name="Edmund M. Clarke"></a>
+            <p><a href="{{ speaker.bio_reference_link }}"><em>{{ speaker.name_ru }}</em><br>
+              {{ speaker.country_ru }}</a></p>
+          </div>
+          <div class="keynote-text">
+            {{ speaker.description_ru|safe }}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+{% endblock %}
