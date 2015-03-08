@@ -2,7 +2,7 @@ import datetime
 
 from flask import render_template, request, make_response, send_file, abort
 
-from app.models.models import ImportantDate, NewsItem, Video, Image, Speaker
+from app.models.models import ImportantDate, NewsItem, Video, Image, Speaker, Page
 from app import constants
 from io import BytesIO
 
@@ -50,6 +50,7 @@ def video():
         video_tags=get_video_tags(),
         picture_tags=get_picture_tags(),
         videos=videos)
+
 
 def pictures():
     tag = request.args.get('tag', None)

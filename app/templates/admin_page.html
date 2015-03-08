@@ -1,0 +1,24 @@
+{% extends 'admin/model/list.html' %}
+{% import 'admin/lib.html' as lib with context %}
+{% import 'admin/static.html' as admin_static with context%}
+{% import 'admin/model/layout.html' as model_layout with context %}
+{% import 'admin/actions.html' as actionlib with context %}
+
+{% block head_css %}
+{{ super() }}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
+{% endblock %}
+
+{% block model_list_table %}
+<ul class="menu dropdown-menu">
+  {% for row in data %}
+    <li class="dropdown-submenu">
+        <a href="{{get_url('.edit_view', id=row.id, url=return_url) }}">{{row.title}}</a>
+        <ul class="dropdown-menu">
+            <li> <a href="{{get_url('.create_view', url=return_url, parent_id = row.id) }}">Add new page</a></li>
+        </ul>
+    </li>
+    {% endfor %}
+    <li> <a href="{{get_url('.create_view', url=return_url) }}">Add new page</a></li>
+</ul>
+{% endblock %}
