@@ -1,0 +1,12 @@
+{% extends 'admin/model/create.html' %}
+{% block tail %}
+{{ super() }}
+<script src="{{ url_for('static', filename='ckeditor/ckeditor.js') }}"></script>
+<script>
+    var elem = document.getElementById("parent");
+    elem.value = "{{ request.args.get('parent_id') }}";
+    $(document).ready(function () {
+        $("#parent").prop("readonly", true);
+    })
+</script>
+{% endblock %}

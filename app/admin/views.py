@@ -1,10 +1,13 @@
+from collections import deque
+
 from flask import url_for, redirect, request, render_template, session
 from flask.ext import wtf
-from flask.ext.admin import expose, AdminIndexView, BaseView
+from flask.ext.admin import expose, AdminIndexView
 from flask.ext.admin.contrib.mongoengine import ModelView
 from flask.ext.admin.model.template import macro
 from flask.ext.login import current_user, login_user, logout_user
 from wtforms import fields, widgets
+
 from app.models import User, Page
 from app.admin.auth.singnin_form import SigninForm
 
@@ -28,7 +31,7 @@ class PageForm(wtf.Form):
     text = CKTextAreaField('Text')
     text_ru = CKTextAreaField('TextRu')
 
-    #parent = fields.SelectField('Parent')
+    # parent = fields.SelectField('Parent')
     '''def __init__(self, lst):
         super(PageForm, self)
         self.parent.choices = lst[:]
@@ -68,14 +71,36 @@ class NewsView(BaseModelView):
 
 class PageAdminView(BaseModelView):
     form_overrides = dict(text=CKTextAreaField, text_ru=CKTextAreaField)
+    create_template = 'page/create_page.html'
+    edit_template = 'page/page_edit.html'
 
-    create_template = 'createPage.html'
-    edit_template = 'edit.html'
+    class Node():
+        def __init__(self, value):
+            self.value = value
+            self.children = []
+
+        def add_child(self, node):
+            self.children.append(node)
+
+    @staticmethod
+    def reconstruct(pages):
+        queue = deque(pages)
+        d = dict()
+        d['None'] = PageAdminView.Node('None')
+        while not len(queue) == 0:
+            node = queue.popleft()
+            new_node = PageAdminView.Node(node)
+            if str(node.parent) in d:
+                d[node.parent].add_child(new_node)
+            else:
+                queue.append(node)
+            d[str(node.pk)] = new_node
+        return d['None'].children
 
     @expose('/')
     def index(self):
-        return self.render('admin_page.html', data=Page.objects.all())
-
+        data = self.reconstruct(Page.objects.all())
+        return self.render('page/page_list.html', data=data)
 
     @expose('/act/')
     def action_view(self):

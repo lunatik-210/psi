@@ -1,0 +1,9 @@
+{% extends 'edit.html' %}
+{% block tail %}
+{{ super() }}
+<script>
+    $(document).ready(function(){
+        $("#parent").prop("readonly", true);
+    })
+</script>
+{% endblock %}

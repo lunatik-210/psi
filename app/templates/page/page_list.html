@@ -13,12 +13,21 @@
 <ul class="menu dropdown-menu">
   {% for row in data %}
     <li class="dropdown-submenu">
-        <a href="{{get_url('.edit_view', id=row.id, url=return_url) }}">{{row.title}}</a>
+        <a href="{{get_url('.edit_view', id=row.value.id, url=return_url) }}">{{row.value.title}}</a>
         <ul class="dropdown-menu">
-            <li> <a href="{{get_url('.create_view', url=return_url, parent_id = row.id) }}">Add new page</a></li>
+            {% for sub_row in row.children %}
+            <li >
+                <a href="{{get_url('.edit_view', id=sub_row.value.id, url=return_url) }}">{{sub_row.value.title}}</a>
+                <!--<ul class="dropdown-menu">-->
+                    <!--<li> <a href="{{get_url('.create_view', url=return_url, parent_id = sub_row.value.id) }}">Add new page</a></li>-->
+                <!--</ul>-->
+            </li>
+            {% endfor %}
+            <li> <a href="{{get_url('.create_view', url=return_url, parent_id = row.value.id) }}">Add new page</a></li>
         </ul>
     </li>
     {% endfor %}
     <li> <a href="{{get_url('.create_view', url=return_url) }}">Add new page</a></li>
 </ul>
+
 {% endblock %}
