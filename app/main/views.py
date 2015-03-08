@@ -1,6 +1,6 @@
 import datetime
 
-from flask import render_template, request, make_response, send_file, abort
+from flask import render_template, request, make_response, send_file, abort, redirect, url_for
 
 from app.models.models import ImportantDate, NewsItem, Video, Image, Speaker, Page
 from app import constants
@@ -22,7 +22,7 @@ def get_tags(model):
 def get_menu():
     menu = {}
     menu_items = {}
-    print Page.objects()
+
     for object in Page.objects():
         menu_items[str(object.id)] = object
         if object.parent == "None":
@@ -35,9 +35,6 @@ def get_menu():
     for key in menu.keys():
         if len(menu[key]) == 0:
             menu[key] = None
-
-    print menu
-    print menu_items
 
     return menu, menu_items
 
@@ -109,7 +106,30 @@ def speakers():
         picture_tags=get_picture_tags(),
         menu=menu,
         menu_items=menu_items,
-        speakers=Speaker.objects.all())    
+        speakers=Speaker.objects.all())
+
+
+def menu():
+    title = request.args.get('title', None)
+
+    if title == None:
+        return redirect(url_for('main.main'))
+    page = Page.objects.filter(title=title).first()
+
+    print page.title
+    print page.title_ru
+
+    locale = request.cookies.get(constants.LOCALE_TOKEN)
+    menu, menu_items = get_menu()
+    return render_template('menu_content.html',
+        dates=ImportantDate.objects.all(),
+        news=NewsItem.objects.all(),
+        locale=locale,
+        video_tags=get_video_tags(),
+        picture_tags=get_picture_tags(),
+        menu=menu,
+        menu_items=menu_items,
+        page=page)
 
 
 def images(filename=None):

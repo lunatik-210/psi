@@ -35,18 +35,18 @@
 
     {% for key in menu.keys() %}
         {% if locale == 'en' %}
-            <li {% if menu[key] %} class="dropdown-submenu" {% endif %} > <a href="{{ url_for('main.main') }}">{{ menu_items[key].title }}</a>
+            <li {% if menu[key] %} class="dropdown-submenu" {% endif %} > <a href="{{ url_for('main.menu', title=menu_items[key].title) }}">{{ menu_items[key].title }}</a>
         {% else %}
-            <li {% if menu[key] %} class="dropdown-submenu" {% endif %} > <a href="{{ url_for('main.main') }}">{{ menu_items[key].title_ru }}</a>
+            <li {% if menu[key] %} class="dropdown-submenu" {% endif %} > <a href="{{ url_for('main.menu', title=menu_items[key].title) }}">{{ menu_items[key].title_ru }}</a>
         {% endif %}
 
         {% if menu[key] %}
         <ul class="dropdown-menu">
             {% for sub_key in menu[key] %}
                 {% if locale == 'en' %}
-                    <li><a href="{{ url_for('main.main') }}">{{ menu_items[sub_key].title }}</a></li>
+                    <li><a href="{{ url_for('main.menu', title=menu_items[sub_key].title) }}">{{ menu_items[sub_key].title }}</a></li>
                 {% else %}
-                    <li><a href="{{ url_for('main.main') }}">{{ menu_items[sub_key].title_ru }}</a></li>
+                    <li><a href="{{ url_for('main.menu', title=menu_items[sub_key].title) }}">{{ menu_items[sub_key].title_ru }}</a></li>
                 {% endif %}
             {% endfor %}
         </ul>
