@@ -114,10 +114,11 @@ def menu():
 
     if title == None:
         return redirect(url_for('main.main'))
-    page = Page.objects.filter(title=title).first()
 
-    print page.title
-    print page.title_ru
+    try:
+        page = Page.objects.filter(title=title).first()
+    except AttributeError:
+        return redirect(url_for('main.main'))
 
     locale = request.cookies.get(constants.LOCALE_TOKEN)
     menu, menu_items = get_menu()
