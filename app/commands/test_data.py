@@ -9,8 +9,9 @@ def create():
     user = User(user_name="admin", password="admin")
     user.save()
 
-    videos = [('qbWUXNPf65A', 'NAME1', 'имя1'), ('cBsMCDgd3lg', 'NAME2', 'имя2'),
-              ('KoyA0PStmls', 'NAME3', 'имя3'), ('AjfejT2DrJo', 'NAME4', 'имя4'), ('0WQTgIC1Pfs', 'NAME5', 'имя5'), ('0WQTgIC1Pfs', 'NAME6', 'имя6')]
+    videos = [('http://www.youtube.com/watch?v=uLPW9qx8hj4', 'NAME1', 'имя1'), ('http://www.youtube.com/watch?v=oKv7AXSAUt0', 'NAME2', 'имя2'),
+              ('http://www.youtube.com/watch?v=r-zKMsj5rio', 'NAME3', 'имя3'), ('http://www.youtube.com/watch?v=1hAWr6c9wV4', 'NAME4', 'имя4'),
+              ('http://www.youtube.com/watch?v=XG--kTbq4ww', 'NAME5', 'имя5'), ('http://www.youtube.com/watch?v=z4Yek65lC-0', 'NAME6', 'имя6')]
 
     for url,name,name_ru in videos:
         video = Video(url=url, name=name)
