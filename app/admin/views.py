@@ -85,26 +85,35 @@ class PageAdminView(BaseModelView):
     @staticmethod
     def reconstruct(pages):
         queue = deque(pages)
-        d = dict()
-        d['None'] = PageAdminView.Node('None')
+        id_to_node = dict()
+        id_to_node['None'] = PageAdminView.Node('None')
         while not len(queue) == 0:
             node = queue.popleft()
             new_node = PageAdminView.Node(node)
-            if str(node.parent) in d:
-                d[node.parent].add_child(new_node)
+            if str(node.parent) in id_to_node:
+                id_to_node[node.parent].add_child(new_node)
             else:
                 queue.append(node)
-            d[str(node.pk)] = new_node
-        return d['None'].children
+            id_to_node[str(node.pk)] = new_node
+        return id_to_node['None'].children, id_to_node
+
+    @staticmethod
+    def delete_children(node):
+        for child in node.children:
+            PageAdminView.delete_children(child)
+        Page.objects(pk=node.value.id).delete()
 
     @expose('/')
     def index(self):
-        data = self.reconstruct(Page.objects.all())
+        data, id_to_node = self.reconstruct(Page.objects.all())
         return self.render('page/page_list.html', data=data)
 
-    @expose('/act/')
+    @expose('/remove/')
     def action_view(self):
-        pass
+        data, id_to_node = self.reconstruct(Page.objects.all())
+        node = id_to_node[request.args['id']]
+        PageAdminView.delete_children(node)
+        return redirect(url_for(".index"))
 
 
 class DefaultLoginView(AdminIndexView):
