@@ -1,5 +1,6 @@
 from collections import deque
 import datetime
+from urlparse import urlparse,parse_qs
 
 from flask import render_template, request, make_response, send_file, abort, redirect, url_for
 
@@ -87,11 +88,16 @@ def video():
     videos = Video.objects.all()
     if tag:
         videos = Video.objects.filter(tag=tag).all()
+
+    for video in videos:
+        video.video_id = parse_qs(urlparse(video.url).query)['v'][0]
+
     locale = request.cookies.get(constants.LOCALE_TOKEN)
     data = reconstruct(Page.objects.all())
     return render_template('video.html',
         dates=ImportantDate.objects.all(),
         news=NewsItem.objects.all(),
+        locale=locale,
         video_tags=get_video_tags(),
         picture_tags=get_picture_tags(),
         data=data,

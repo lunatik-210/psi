@@ -1,6 +1,6 @@
 {% extends 'admin/model/list.html' %}
 {% macro render_url(model, column) %}
-<a href="http://www.youtube.com/watch?v={{model[column]}}" target="_blank">{{model['name']}}</a>
+<a href="{{model[column]}}" target="_blank">{{model['name']}}</a>
 {% endmacro %}
 
 {% block tail %}
