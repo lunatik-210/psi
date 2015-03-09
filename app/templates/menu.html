@@ -1,3 +1,20 @@
+{% macro add_submenu(parent_node) %}
+<ul class="dropdown-menu">
+    {% for child_node in parent_node.children %}
+    {% if locale == 'en' %}
+    <li {% if child_node.children %} class="dropdown-submenu" {% endif %} >
+        <a href="{{ url_for('main.menu', title=child_node.value.title) }}">{{ child_node.value.title }}</a>
+        {% else %}
+    <li {% if child_node.children %} class="dropdown-submenu" {% endif %} >
+        <a href="{{ url_for('main.menu', title=child_node.value.title) }}">{{ child_node.value.title_ru }}</a>
+        {% endif %}
+
+        {{add_submenu(child_node)}}
+    </li>
+    {% endfor %}
+</ul>
+{% endmacro %}
+
 <ul class="menu dropdown-menu">
     <li><a href="/">{{ _('Welcome') }}</a></li>
 
@@ -33,23 +50,16 @@
     <li><a href="http://www.easychair.org/smart-program/PSI2015/">{{ _('Programme') }}</a></li>
     <li><a href="{{ url_for('main.speakers') }}">{{ _('Keynote Speakers') }}</a></li>
 
-    {% for key in menu.keys() %}
+    {% for child_node in data %}
         {% if locale == 'en' %}
-            <li {% if menu[key] %} class="dropdown-submenu" {% endif %} > <a href="{{ url_for('main.menu', title=menu_items[key].title) }}">{{ menu_items[key].title }}</a>
-        {% else %}
-            <li {% if menu[key] %} class="dropdown-submenu" {% endif %} > <a href="{{ url_for('main.menu', title=menu_items[key].title) }}">{{ menu_items[key].title_ru }}</a>
-        {% endif %}
+        <li {% if child_node.children %} class="dropdown-submenu" {% endif %} >
+            <a href="{{ url_for('main.menu', title=child_node.value.title) }}">{{ child_node.value.title }}</a>
+            {% else %}
+        <li {% if child_node.children %} class="dropdown-submenu" {% endif %} >
+            <a href="{{ url_for('main.menu', title=child_node.value.title) }}">{{ child_node.value.title_ru }}</a>
+            {% endif %}
 
-        {% if menu[key] %}
-        <ul class="dropdown-menu">
-            {% for sub_key in menu[key] %}
-                {% if locale == 'en' %}
-                    <li><a href="{{ url_for('main.menu', title=menu_items[sub_key].title) }}">{{ menu_items[sub_key].title }}</a></li>
-                {% else %}
-                    <li><a href="{{ url_for('main.menu', title=menu_items[sub_key].title) }}">{{ menu_items[sub_key].title_ru }}</a></li>
-                {% endif %}
-            {% endfor %}
-        </ul>
-        {% endif %}
+            {{add_submenu(child_node)}}
+        </li>
     {% endfor %}
 </ul>

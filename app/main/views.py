@@ -1,3 +1,4 @@
+from collections import deque
 import datetime
 
 from flask import render_template, request, make_response, send_file, abort, redirect, url_for
@@ -19,24 +20,24 @@ def get_tags(model):
     return tags
 
 
-def get_menu():
-    menu = {}
-    menu_items = {}
-
-    for object in Page.objects():
-        menu_items[str(object.id)] = object
-        if object.parent == "None":
-            menu[str(object.id)] = []
-
-    for object in Page.objects():
-        if object.parent != "None":
-            menu[str(object.parent)].append(str(object.id))
-
-    for key in menu.keys():
-        if len(menu[key]) == 0:
-            menu[key] = None
-
-    return menu, menu_items
+# def get_menu():
+#     menu = {}
+#     menu_items = {}
+#
+#     for object in Page.objects():
+#         menu_items[str(object.id)] = object
+#         if object.parent == "None":
+#             menu[str(object.id)] = []
+#
+#     for object in Page.objects():
+#         if object.parent != "None":
+#             menu[str(object.parent)].append(str(object.id))
+#
+#     for key in menu.keys():
+#         if len(menu[key]) == 0:
+#             menu[key] = None
+#
+#     return menu, menu_items
 
 
 def get_picture_tags():
@@ -47,16 +48,37 @@ def get_video_tags():
     return get_tags(Video)
 
 
+class Node():
+    def __init__(self, value):
+        self.value = value
+        self.children = []
+
+    def add_child(self, node):
+        self.children.append(node)
+
+def reconstruct(pages):
+    queue = deque(pages)
+    d = dict()
+    d['None'] = Node('None')
+    while not len(queue) == 0:
+        node = queue.popleft()
+        new_node = Node(node)
+        if str(node.parent) in d:
+            d[node.parent].add_child(new_node)
+        else:
+            queue.append(node)
+        d[str(node.pk)] = new_node
+    return d['None'].children
+
 def main():
     locale = request.cookies.get(constants.LOCALE_TOKEN)
-    menu, menu_items = get_menu()
+    data = reconstruct(Page.objects.all())
     return render_template('main.html',
         dates=ImportantDate.objects.all(),
         news=NewsItem.objects.all(),
         locale=locale,
         video_tags=get_video_tags(),
-        menu=menu,
-        menu_items=menu_items,
+        data=data,
         picture_tags=get_picture_tags())
 
 
@@ -66,14 +88,13 @@ def video():
     if tag:
         videos = Video.objects.filter(tag=tag).all()
     locale = request.cookies.get(constants.LOCALE_TOKEN)
-    menu, menu_items = get_menu()
+    data = reconstruct(Page.objects.all())
     return render_template('video.html',
         dates=ImportantDate.objects.all(),
         news=NewsItem.objects.all(),
         video_tags=get_video_tags(),
         picture_tags=get_picture_tags(),
-        menu=menu,
-        menu_items=menu_items,
+        data=data,
         videos=videos)
 
 
@@ -83,29 +104,27 @@ def pictures():
     if tag:
         images = Image.objects.filter(tag=tag).all()
     locale = request.cookies.get(constants.LOCALE_TOKEN)
-    menu, menu_items = get_menu()
+    data = reconstruct(Page.objects.all())
     return render_template('pictures.html',
         dates=ImportantDate.objects.all(),
         news=NewsItem.objects.all(),
         locale=locale,
         video_tags=get_video_tags(),
         picture_tags=get_picture_tags(),
-        menu=menu,
-        menu_items=menu_items,
+        data=data,
         images=images)
 
 
 def speakers():
     locale = request.cookies.get(constants.LOCALE_TOKEN)
-    menu, menu_items = get_menu()
+    data = reconstruct(Page.objects.all())
     return render_template('speakers.html',
         dates=ImportantDate.objects.all(),
         news=NewsItem.objects.all(),
         locale=locale,
         video_tags=get_video_tags(),
         picture_tags=get_picture_tags(),
-        menu=menu,
-        menu_items=menu_items,
+        data=data,
         speakers=Speaker.objects.all())
 
 
@@ -121,15 +140,14 @@ def menu():
         return redirect(url_for('main.main'))
 
     locale = request.cookies.get(constants.LOCALE_TOKEN)
-    menu, menu_items = get_menu()
+    data = reconstruct(Page.objects.all())
     return render_template('menu_content.html',
         dates=ImportantDate.objects.all(),
         news=NewsItem.objects.all(),
         locale=locale,
         video_tags=get_video_tags(),
         picture_tags=get_picture_tags(),
-        menu=menu,
-        menu_items=menu_items,
+        data=data,
         page=page)
 
 

@@ -9,25 +9,28 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/menu.css') }}">
 {% endblock %}
 
+{% macro add_submenu(parent_node) %}
+<ul class="dropdown-menu">
+    {% for child_node in parent_node.children %}
+    <li class="dropdown-submenu">
+        <a href="{{get_url('.edit_view', id=child_node.value.id, url=return_url) }}">{{child_node.value.title}}</a>
+        {{add_submenu(child_node)}}
+    </li>
+    {% endfor %}
+    <li> <a href="{{get_url('.create_view', url=return_url, parent_id = parent_node.value.id) }}">Add new page</a></li>
+</ul>
+{% endmacro %}
+
 {% block model_list_table %}
 <ul class="menu dropdown-menu">
-  {% for row in data %}
+  {% for node in data %}
     <li class="dropdown-submenu">
-        <a href="{{get_url('.edit_view', id=row.value.id, url=return_url) }}">{{row.value.title}}</a>
-        <ul class="dropdown-menu">
-            {% for sub_row in row.children %}
-            <li >
-                <a href="{{get_url('.edit_view', id=sub_row.value.id, url=return_url) }}">{{sub_row.value.title}}</a>
-                <!--<ul class="dropdown-menu">-->
-                    <!--<li> <a href="{{get_url('.create_view', url=return_url, parent_id = sub_row.value.id) }}">Add new page</a></li>-->
-                <!--</ul>-->
-            </li>
-            {% endfor %}
-            <li> <a href="{{get_url('.create_view', url=return_url, parent_id = row.value.id) }}">Add new page</a></li>
-        </ul>
+        <a href="{{get_url('.edit_view', id=node.value.id, url=return_url) }}">{{node.value.title}}</a>
+        {{add_submenu(node)}}
     </li>
     {% endfor %}
     <li> <a href="{{get_url('.create_view', url=return_url) }}">Add new page</a></li>
 </ul>
 
 {% endblock %}
+
