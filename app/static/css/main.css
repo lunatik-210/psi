@@ -130,3 +130,8 @@
 {
     opacity: 1;
 }
+
+.page-content
+{
+    word-wrap: break-word;
+}
