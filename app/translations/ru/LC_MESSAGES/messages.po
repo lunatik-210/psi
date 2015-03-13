@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-05 00:01+0300\n"
+"POT-Creation-Date: 2015-03-13 13:29+0300\n"
 "PO-Revision-Date: 2015-03-01 23:01+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -22,23 +22,15 @@ msgstr ""
 msgid "ru"
 msgstr "en"
 
-#: app/templates/index.html:34
-msgid "Log in"
-msgstr "Зайти в систему"
-
-#: app/templates/index.html:36
+#: app/templates/index.html:33
 msgid "Admin Page"
 msgstr "Админка"
 
-#: app/templates/index.html:37
-msgid "Log out"
-msgstr "Выйти из системы"
-
-#: app/templates/index.html:54
+#: app/templates/index.html:49
 msgid "Dates"
 msgstr "Важные даты"
 
-#: app/templates/index.html:67
+#: app/templates/index.html:62
 msgid "News"
 msgstr "Свежие новости"
 
@@ -46,29 +38,43 @@ msgstr "Свежие новости"
 msgid "Content"
 msgstr "Информация"
 
-#: app/templates/menu.html:2
+#: app/templates/menu.html:19
 msgid "Welcome"
 msgstr "Главная"
 
-#: app/templates/menu.html:5 app/templates/video.html:4
+#: app/templates/menu.html:22 app/templates/video.html:9
 msgid "Video"
 msgstr "Видео"
 
-#: app/templates/menu.html:19 app/templates/pictures.html:4
+#: app/templates/menu.html:36 app/templates/pictures.html:4
 msgid "Pictures"
 msgstr "Фотографии"
 
-#: app/templates/menu.html:33
+#: app/templates/menu.html:50
 msgid "Programme"
 msgstr "Программа конференции"
 
-#: app/templates/menu.html:34 app/templates/speakers.html:4
+#: app/templates/menu.html:51 app/templates/speakers.html:4
 msgid "Keynote Speakers"
 msgstr "Основные докладчики"
+
+#: app/templates/menu.html:52
+msgid "Call for Papers (PDF)"
+msgstr "Информационное письмо (PDF)"
+
+#: app/templates/menu.html:68
+msgid "Previous PSI Editions"
+msgstr "Предыдущие конференции PSI"
 
 #~ msgid "asd"
 #~ msgstr "русский"
 
 #~ msgid "asdf"
 #~ msgstr "english"
+
+#~ msgid "Log in"
+#~ msgstr "Зайти в систему"
+
+#~ msgid "Log out"
+#~ msgstr "Выйти из системы"
 

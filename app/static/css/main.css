@@ -101,6 +101,11 @@
     clear:both;
 }
 
+.title {
+    margin-left: 5px;
+    font-size: 150%; /* Размер шрифта в процентах */
+}
+
 #back-to-top 
 {
     position: fixed;

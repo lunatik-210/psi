@@ -47,8 +47,9 @@
         {% endif %}
     </li>
 
-    <li><a href="http://www.easychair.org/smart-program/PSI2015/">{{ _('Programme') }}</a></li>
+    <li><a href="http://www.easychair.org/smart-program/PSI2015/program.html">{{ _('Programme') }}</a></li>
     <li><a href="{{ url_for('main.speakers') }}">{{ _('Keynote Speakers') }}</a></li>
+    <li><a href="{{ url_for('static', filename='data/psi_2015_cfp.pdf') }}">{{ _('Call for Papers (PDF)') }}</a></li>
 
     {% for child_node in data %}
         {% if locale == 'en' %}
@@ -62,4 +63,29 @@
             {{add_submenu(child_node)}}
         </li>
     {% endfor %}
+
+    <li class="dropdown-submenu">
+        <a href="">{{ _('Previous PSI Editions') }}</a>
+        {% if video_tags %} 
+            <ul class="dropdown-menu">
+                {% for tag in video_tags %}
+                    {% if locale == 'en' %}
+                        <li><a href="http://psi.nsc.ru/en/psi11">PSI'11</a></li>
+                        <li><a href="http://psi.nsc.ru/en/psi09/index.shtml">PSI'09</a></li>
+                        <li><a href="http://psi.nsc.ru/en/psi06/index">PSI'06</a></li>
+                        <li><a href="http://psi.nsc.ru/en/psi03/index">PSI'03</a></li>
+                        <li><a href="http://psi.nsc.ru/en/psi01/index">PSI'01</a></li>
+                        <li><a href="http://psi.nsc.ru/en/psi99"/index>PSI'99</a></li>
+                    {% else %}
+                        <li><a href="http://psi.nsc.ru/ru/psi11">PSI'11</a></li>
+                        <li><a href="http://psi.nsc.ru/ru/psi09/index.shtml">PSI'09</a></li>
+                        <li><a href="http://psi.nsc.ru/ru/psi06/index">PSI'06</a></li>
+                        <li><a href="http://psi.nsc.ru/ru/psi03/index">PSI'03</a></li>
+                        <li><a href="http://psi.nsc.ru/ru/psi01/index">PSI'01</a></li>
+                        <li><a href="http://psi.nsc.ru/ru/psi99"/index>PSI'99</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
 </ul>

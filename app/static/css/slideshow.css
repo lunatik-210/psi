@@ -9,15 +9,14 @@
 
 .header 
 {
-  height: 140px;
-  width: 300%;
+   max-height: 140px;
+   margin-top: 10px;
+   margin-bottom: 10px;
 }
  
 .header img 
 {
-  max-height: 140px;
-  margin-right: 3px;
-  margin-left: 3px;
+  height: 140px;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -41,6 +40,8 @@
 
 .line-separator
 {
+  margin-top: 4px;
+  margin-bottom: 4px;
   height: 1px;
   background: #717171;
   border-bottom: 1px solid #313030;
