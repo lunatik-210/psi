@@ -66,26 +66,22 @@
 
     <li class="dropdown-submenu">
         <a href="">{{ _('Previous PSI Editions') }}</a>
-        {% if video_tags %} 
-            <ul class="dropdown-menu">
-                {% for tag in video_tags %}
-                    {% if locale == 'en' %}
-                        <li><a href="http://psi.nsc.ru/en/psi11">PSI'11</a></li>
-                        <li><a href="http://psi.nsc.ru/en/psi09/index.shtml">PSI'09</a></li>
-                        <li><a href="http://psi.nsc.ru/en/psi06/index">PSI'06</a></li>
-                        <li><a href="http://psi.nsc.ru/en/psi03/index">PSI'03</a></li>
-                        <li><a href="http://psi.nsc.ru/en/psi01/index">PSI'01</a></li>
-                        <li><a href="http://psi.nsc.ru/en/psi99"/index>PSI'99</a></li>
-                    {% else %}
-                        <li><a href="http://psi.nsc.ru/ru/psi11">PSI'11</a></li>
-                        <li><a href="http://psi.nsc.ru/ru/psi09/index.shtml">PSI'09</a></li>
-                        <li><a href="http://psi.nsc.ru/ru/psi06/index">PSI'06</a></li>
-                        <li><a href="http://psi.nsc.ru/ru/psi03/index">PSI'03</a></li>
-                        <li><a href="http://psi.nsc.ru/ru/psi01/index">PSI'01</a></li>
-                        <li><a href="http://psi.nsc.ru/ru/psi99"/index>PSI'99</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        {% endif %}
+        <ul class="dropdown-menu">
+                {% if locale == 'en' %}
+                    <li><a href="http://psi.nsc.ru/en/psi11">PSI'11</a></li>
+                    <li><a href="http://psi.nsc.ru/en/psi09/index.shtml">PSI'09</a></li>
+                    <li><a href="http://psi.nsc.ru/en/psi06/index">PSI'06</a></li>
+                    <li><a href="http://psi.nsc.ru/en/psi03/index">PSI'03</a></li>
+                    <li><a href="http://psi.nsc.ru/en/psi01/index">PSI'01</a></li>
+                    <li><a href="http://psi.nsc.ru/en/psi99"/index>PSI'99</a></li>
+                {% else %}
+                    <li><a href="http://psi.nsc.ru/ru/psi11">PSI'11</a></li>
+                    <li><a href="http://psi.nsc.ru/ru/psi09/index.shtml">PSI'09</a></li>
+                    <li><a href="http://psi.nsc.ru/ru/psi06/index">PSI'06</a></li>
+                    <li><a href="http://psi.nsc.ru/ru/psi03/index">PSI'03</a></li>
+                    <li><a href="http://psi.nsc.ru/ru/psi01/index">PSI'01</a></li>
+                    <li><a href="http://psi.nsc.ru/ru/psi99"/index>PSI'99</a></li>
+                {% endif %}
+        </ul>
     </li>
 </ul>
