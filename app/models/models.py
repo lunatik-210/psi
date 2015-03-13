@@ -4,6 +4,11 @@ from flask.ext.login import UserMixin
 
 from app import db
 
+class MainPage(db.Document):
+    text = db.StringField()
+    text_ru = db.StringField()
+    meta = {'collection': 'main_page'}
+
 
 class Page(db.Document):
     title = db.StringField(max_length=256)

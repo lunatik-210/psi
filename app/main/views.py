@@ -4,7 +4,7 @@ from io import BytesIO
 
 from flask import render_template, request, send_file, abort, redirect, url_for
 
-from app.models.models import ImportantDate, NewsItem, Video, Image, Speaker, Page
+from app.models.models import ImportantDate, NewsItem, Video, Image, Speaker, Page, MainPage
 from app import constants
 
 
@@ -56,7 +56,8 @@ def get_page_data():
 
 
 def main():
-    return render_template('main.html', **get_page_data())
+    page = MainPage.objects.first()
+    return render_template('main.html', page=page, **get_page_data())
 
 
 def video():

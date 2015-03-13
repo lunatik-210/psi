@@ -6,7 +6,7 @@ from flask.ext.admin import expose, AdminIndexView
 from flask.ext.admin.contrib.mongoengine import ModelView
 from flask.ext.admin.model.template import macro
 from flask.ext.login import current_user, login_user, logout_user
-from wtforms import fields, widgets
+from wtforms import fields, widgets, Form
 
 from app.models import User, Page
 from app.admin.auth.singnin_form import SigninForm
@@ -68,6 +68,11 @@ class NewsView(BaseModelView):
     create_template = 'create.html'
     edit_template = 'edit.html'
 
+class MainPageAdminView(BaseModelView):
+    can_create = False
+    can_delete = False
+    edit_template = 'page/page_edit.html'
+    form_overrides = dict(text=CKTextAreaField, text_ru=CKTextAreaField)
 
 class PageAdminView(BaseModelView):
     form_overrides = dict(text=CKTextAreaField, text_ru=CKTextAreaField)

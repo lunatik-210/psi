@@ -1,5 +1,9 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <h1>{{ _('Content') }}</h1>
+    {% if locale == 'en' %}
+        <div class="page-content">{{ page.text|safe }}</div>
+    {% else %}
+        <div class="page-content">{{ page.text_ru|safe }}</div>
+    {% endif %}
 {% endblock %}
