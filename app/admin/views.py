@@ -55,6 +55,9 @@ class SpeakersView(BaseModelView):
     form_overrides = dict(description=CKTextAreaField, description_ru=CKTextAreaField)
     create_template = 'create.html'
     edit_template = 'edit.html'
+    # TODO list_template overriding causes images to be rendered as links
+    list_template = "admin_speakers_list.html"
+    column_formatters = dict(bio_reference_link=macro('render_url'))
 
 
 class VideoView(BaseModelView):

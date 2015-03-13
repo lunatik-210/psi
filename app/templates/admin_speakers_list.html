@@ -1,0 +1,9 @@
+{% extends 'admin/model/list.html' %}
+{% macro render_url(model, column) %}
+<a href="{{model[column]}}" target="_blank">{{model[column]}}</a>
+{% endmacro %}
+
+{% block tail %}
+{{ super() }}
+
+{% endblock %}
