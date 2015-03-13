@@ -45,5 +45,6 @@ div.keynote:hover {
 
 div.keynote-text 
 {
+    word-wrap: break-word;
     padding: 10px;
 }
