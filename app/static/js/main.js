@@ -22,10 +22,10 @@ function getCookie(cname) {
 //WARNING bullshit code ahead
 $(document).ready(function () {
     var locale_cookie_name = "psi_locale";
-    var cookie = getCookie(locale_cookie_name);
     var button = $("#changeLanguageButton");
 
     button.click(function () {
+        var cookie = getCookie(locale_cookie_name
         if (cookie == 'en') {
             setCookie(locale_cookie_name, 'ru', 30);
         } else if (cookie == 'ru') {
