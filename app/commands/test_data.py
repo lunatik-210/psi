@@ -18,7 +18,7 @@ def create():
         video = Video(url=url, name=name)
         video.save()
 
-    MainPage(text="MAINPAGE",text_ru="МАЙНПАГЕ")
+    MainPage(text="MAINPAGE",text_ru="МАЙНПАГЕ").save()
 
     news = [["The PSI'14 is open. Congratulations to the Conference participants and organizers! See some photographs taken at the opening.",
     u"Поздарвляем всех участников и организаторов! Несколько фоток уже выложено!"],
