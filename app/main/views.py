@@ -45,7 +45,7 @@ def reconstruct(pages):
 
 
 def get_page_data():
-    locale = request.cookies.get(constants.LOCALE_TOKEN)
+    locale = request.cookies.get(constants.LOCALE_TOKEN) or constants.DEFAULT_LOCALE
     data = reconstruct(Page.objects.all())
     return dict(dates=ImportantDate.objects.all(),
                 news=NewsItem.objects.all(),
@@ -57,6 +57,7 @@ def get_page_data():
 
 def main():
     page = MainPage.objects.first()
+
     return render_template('main.html', page=page, **get_page_data())
 
 
@@ -71,6 +72,7 @@ def video():
 
     return render_template('video.html',
                            videos=videos, **get_page_data())
+
 
 def pictures():
     tag = request.args.get('tag', None)

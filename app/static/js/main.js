@@ -31,7 +31,8 @@ $(document).ready(function () {
         } else if (cookie == 'ru') {
             setCookie(locale_cookie_name, 'en', 30);
         } else {
-            //
+            //default locale is english
+            setCookie(locale_cookie_name, 'ru', 30);
         }
         location.reload();
     });
