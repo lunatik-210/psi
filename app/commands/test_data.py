@@ -1,7 +1,8 @@
  # -*- coding: utf-8 -*-
 
 from . import test_data
-from app.models.models import User, Video, NewsItem, ImportantDate
+from app.models.models import User, Video, NewsItem, ImportantDate, Page, MainPage
+
 
 @test_data.command
 def create():
@@ -16,6 +17,8 @@ def create():
     for url,name,name_ru in videos:
         video = Video(url=url, name=name)
         video.save()
+
+    MainPage(text="MAINPAGE",text_ru="МАЙНПАГЕ")
 
     news = [["The PSI'14 is open. Congratulations to the Conference participants and organizers! See some photographs taken at the opening.",
     u"Поздарвляем всех участников и организаторов! Несколько фоток уже выложено!"],
@@ -43,6 +46,7 @@ def create():
 @test_data.command
 def delete():
     "Delete all data from database"
+    Page.drop_collection()
     User.drop_collection()
     Video.drop_collection()
     NewsItem.drop_collection()
