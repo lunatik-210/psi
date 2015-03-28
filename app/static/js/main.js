@@ -11,9 +11,9 @@ function getCookie(cname) {
         var cookie = ca[i]
         while (cookie.charAt(0) == ' ') {
             cookie = cookie.substring(1)
-            if (cookie.indexOf(name) == 0) {
-                return cookie.substring(name.length, cookie.length);
-            }
+        }
+        if (cookie.indexOf(name) == 0) {
+            return cookie.substring(name.length, cookie.length);
         }
     }
     return "";
@@ -22,10 +22,10 @@ function getCookie(cname) {
 //WARNING bullshit code ahead
 $(document).ready(function () {
     var locale_cookie_name = "psi_locale";
-    var cookie = getCookie(locale_cookie_name);
     var button = $("#changeLanguageButton");
 
     button.click(function () {
+        var cookie = getCookie(locale_cookie_name)
         if (cookie == 'en') {
             setCookie(locale_cookie_name, 'ru', 30);
         } else if (cookie == 'ru') {
