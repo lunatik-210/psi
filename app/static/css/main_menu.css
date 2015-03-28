@@ -1,0 +1,42 @@
+.b-main-menu
+{
+    height: 70px;
+}
+
+.b-main-menu ul
+{
+    padding-top: 25px;
+}
+
+.b-main-menu ul li
+{
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 15px;
+    padding-right: 15px;
+    border-right: 1px black solid;
+}
+
+.b-main-menu-item
+{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.b-main-menu-item:hover
+{
+    text-decoration: none;
+    color: #1167a2
+}
+
+.b-main-menu ul li:hover
+{
+
+}
+
+.b-main-menu ul li:last-child
+{
+    border: none;
+}

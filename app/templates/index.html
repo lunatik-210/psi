@@ -9,6 +9,8 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/pictures.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/speakers.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='video-js/video-js.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/header.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main_menu.css') }}">
 
 <script src="{{ url_for('static', filename='photoswipe/photoswipe.min.js') }}"></script>
 <script src="{{ url_for('static', filename='photoswipe/photoswipe-ui-default.min.js') }}"></script>
@@ -21,6 +23,16 @@
 
 {% block body %}
 
+{% include "header.html" %}
+
+<div class="content">
+    {% include "main_menu.html" %}
+    <div class="b-psi-logo">
+        <a href="/"><img src="{{ url_for('static', filename='images/psi-conf-logo.png') }}"></a>
+    </div>
+</div>
+
+<!--
 {% include "header.html" %}
 
 <div class="line-separator"></div>
@@ -106,4 +118,5 @@
         });
     }
 </script>
+-->
 {% endblock %}

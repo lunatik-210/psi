@@ -1,87 +1,9 @@
-{% macro add_submenu(parent_node) %}
-<ul class="dropdown-menu">
-    {% for child_node in parent_node.children %}
-    {% if locale == 'en' %}
-    <li {% if child_node.children %} class="dropdown-submenu" {% endif %} >
-        <a href="{{ url_for('main.menu', title=child_node.value.title) }}">{{ child_node.value.title }}</a>
-        {% else %}
-    <li {% if child_node.children %} class="dropdown-submenu" {% endif %} >
-        <a href="{{ url_for('main.menu', title=child_node.value.title) }}">{{ child_node.value.title_ru }}</a>
-        {% endif %}
-
-        {{add_submenu(child_node)}}
-    </li>
-    {% endfor %}
-</ul>
-{% endmacro %}
-
-<ul class="menu dropdown-menu">
-    <li><a href="/">{{ _('Welcome') }}</a></li>
-
-    <li {% if video_tags %} class="dropdown-submenu" {% endif %}>
-        <a href="{{ url_for('main.video') }}">{{ _('Video') }}</a>
-        {% if video_tags %} 
-            <ul class="dropdown-menu">
-                {% for tag in video_tags %}
-                    {% if locale == 'en' %}
-                        <li><a href="{{ url_for('main.video', tag=tag.get('en')) }}">{{ tag.get('en') }}</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('main.video', tag=tag.get('en')) }}">{{ tag.get('ru') }}</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </li>
-
-    <li {% if picture_tags %} class="dropdown-submenu" {% endif %} > <a href="{{ url_for('main.pictures') }}">{{ _('Pictures') }}</a>
-        {% if picture_tags %} 
-            <ul class="dropdown-menu">
-                {% for tag in picture_tags %}
-                    {% if locale == 'en' %}
-                        <li><a href="{{ url_for('main.pictures', tag=tag.get('en')) }}">{{ tag.get('en') }}</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('main.pictures', tag=tag.get('en')) }}">{{ tag.get('ru') }}</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </li>
-
-    <li><a href="http://www.easychair.org/smart-program/PSI2015/program.html">{{ _('Programme') }}</a></li>
-    <li><a href="{{ url_for('main.speakers') }}">{{ _('Keynote Speakers') }}</a></li>
-    <li><a href="{{ url_for('static', filename='data/psi_2015_cfp.pdf') }}">{{ _('Call for Papers (PDF)') }}</a></li>
-
-    {% for child_node in data %}
-        {% if locale == 'en' %}
-        <li {% if child_node.children %} class="dropdown-submenu" {% endif %} >
-            <a href="{{ url_for('main.menu', title=child_node.value.title) }}">{{ child_node.value.title }}</a>
-            {% else %}
-        <li {% if child_node.children %} class="dropdown-submenu" {% endif %} >
-            <a href="{{ url_for('main.menu', title=child_node.value.title) }}">{{ child_node.value.title_ru }}</a>
-            {% endif %}
-
-            {{add_submenu(child_node)}}
-        </li>
-    {% endfor %}
-
-    <li class="dropdown-submenu">
-        <a href="">{{ _('Previous PSI Editions') }}</a>
-        <ul class="dropdown-menu">
-                {% if locale == 'en' %}
-                    <li><a href="http://psi.nsc.ru/en/psi11">PSI'11</a></li>
-                    <li><a href="http://psi.nsc.ru/en/psi09/index.shtml">PSI'09</a></li>
-                    <li><a href="http://psi.nsc.ru/en/psi06/index">PSI'06</a></li>
-                    <li><a href="http://psi.nsc.ru/en/psi03/index">PSI'03</a></li>
-                    <li><a href="http://psi.nsc.ru/en/psi01/index">PSI'01</a></li>
-                    <li><a href="http://psi.nsc.ru/en/psi99"/index>PSI'99</a></li>
-                {% else %}
-                    <li><a href="http://psi.nsc.ru/ru/psi11">PSI'11</a></li>
-                    <li><a href="http://psi.nsc.ru/ru/psi09/index.shtml">PSI'09</a></li>
-                    <li><a href="http://psi.nsc.ru/ru/psi06/index">PSI'06</a></li>
-                    <li><a href="http://psi.nsc.ru/ru/psi03/index">PSI'03</a></li>
-                    <li><a href="http://psi.nsc.ru/ru/psi01/index">PSI'01</a></li>
-                    <li><a href="http://psi.nsc.ru/ru/psi99"/index>PSI'99</a></li>
-                {% endif %}
-        </ul>
-    </li>
-</ul>
+<div class="b-main-menu">
+    <ul>
+        <li>Programme</li>
+        <li>Committees</li>
+        <li>Call for paper</li>
+        <li>General information</li>
+        <li>Partners</li>
+    </ul>
+</div>
