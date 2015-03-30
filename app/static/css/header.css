@@ -13,16 +13,33 @@
     background-color: #424242;
     border-right: 1px #d6f1ff solid;
     margin-right: -3px;
-    text-align: center;
 }
 
-.b-conf-info span
+.b-conf-info-wrapper
+{
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 100px;
+}
+
+.b-conf-info-wrapper span
 {
     color: white;
     font-size: 2em;
     font-weight: bold;
     display: inline-block;
     margin-top: 20px;
+    cursor: default;
+}
+
+.b-conf-info a
+{
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 10px;
 }
 
 .b-conf-info-arraw
@@ -42,11 +59,4 @@
 {
     width: 248px;
     height: 70px;
-}
-
-.b-change-lang
-{
-    display: inline-block;
-    font-size: 2em;
-    color: white;
 }

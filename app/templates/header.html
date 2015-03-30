@@ -1,9 +1,11 @@
 <div class="b-header">
     <div class="b-conf-info">
-        <a class="b-change-lang" href="" id="changeLanguageButton">{{ _('ru') }}</a>
-        <span class="b-conf-info-arraw"><</span>
-        <span>Ershav Informaties conference</span>
-        <span class="b-conf-info-arraw">></span>
+        <a href="" id="changeLanguageButton">{{ _('ru') }}</a>
+        <div class="b-conf-info-wrapper">
+            <span class="b-conf-info-arraw"><</span>
+            <span>Ershov Informaties conference</span>
+            <span class="b-conf-info-arraw">></span>
+        </div>
     </div>
     <div class="b-inno-logo">
         <a href="/"><img src="{{ url_for('static', filename='images/inno_logo.png') }}"></a>
