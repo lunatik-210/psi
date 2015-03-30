@@ -43,3 +43,10 @@
     width: 248px;
     height: 70px;
 }
+
+.b-change-lang
+{
+    display: inline-block;
+    font-size: 2em;
+    color: white;
+}
