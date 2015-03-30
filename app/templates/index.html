@@ -25,64 +25,14 @@
 
 {% include "header.html" %}
 
-<div class="content">
-    {% include "main_menu.html" %}
+{% include "menu-old.html" %}
+
+<div class="body-content">
     <div class="b-psi-logo">
         <a href="/"><img src="{{ url_for('static', filename='images/psi-conf-logo.png') }}"></a>
     </div>
-</div>
-
-<!--
-{% include "header.html" %}
-
-<div class="line-separator"></div>
-<div class="after_header title">
-    <a href="" id="changeLanguageButton">{{ _('ru') }}</a> | 
-    <span>PSI 2015 ERSHOV INFORMATICS CONFERENCE * June, 24, 2015, Kazan, Russia</span>
-</div>
-<br>
-
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="col-md-2 container left_menu">
-            {% include "menu.html" %}
-            <a href="/"><img class="banner" src="{{ url_for('static', filename='images/banner.jpg') }}"></a>
-        </div>
-
-        <div class="col-md-7 content">
-            {% block content %}
-            {% endblock %} 
-        </div>
-
-        <div class="col-md-3">
-            <h1>{{ _('Dates') }}</h1>
-            <div class="container-fluid right_menu">
-                {% for post in dates %}
-                <b><span>{{ post.date.strftime('%Y-%m-%d %H:%M:%S') }}</span><br>  </b>
-                {% if locale == 'ru' %}
-                    <span>{{ post.description_ru|safe }}</span><br>
-                {% else %}
-                    <span>{{ post.description|safe }}</span><br>
-                {% endif %}
-                <br>
-                {% endfor %}
-            </div>
-            <br>
-            <h1>{{ _('News') }}</h1>
-            <div class="container-fluid right_menu">
-                {% for news_item in news %}
-                <b><span>{{ news_item.date.strftime('%Y-%m-%d %H:%M:%S') }}</span><br></b>
-                {% if locale == 'ru' %}
-                    <span>{{ news_item.content_ru|safe }}</span><br>
-                {% else %}
-                    <span>{{ news_item.content|safe }}</span><br>
-                {% endif %}
-                <br>
-                {% endfor %}
-            </div>
-
-        </div>
-    </div>
+    {% block content %}
+    {% endblock %}
 </div>
 
 <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
@@ -118,5 +68,6 @@
         });
     }
 </script>
--->
+
+
 {% endblock %}

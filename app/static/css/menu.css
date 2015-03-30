@@ -2,7 +2,10 @@
 {
     margin-top: 24px;
     display: block;
-    position: static;
+    position: fixed;
+    z-index: 1030;
+    top:50px;
+    left:20px;
 }
 
 .dropdown-submenu
