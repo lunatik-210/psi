@@ -9,6 +9,7 @@
     <h1>{{ _('Video') }}</h1>
 
     {% for video in videos %}
+      <div class="col-md-4">
         <div class="b-images">
             <img type="button" data-toggle="modal" data-target=".modal-{{ loop.index }}" src="http://img.youtube.com/vi/{{ video.video_id }}/mqdefault.jpg" alt="">
             <img>
@@ -21,11 +22,12 @@
                 </div>
             </div>
         </div>
+      </div>
     {% endfor %}
 
     <script type="text/javascript">
         {% for video in videos %}
-            $('.modal-{{ loop.index }}').on('hidden.bs.modal', function () 
+            $('.modal-{{ loop.index }}').on('hidden.bs.modal', function ()
             {
                 var myPlayer = videojs('video-{{ loop.index }}');
                 myPlayer.currentTime(0);

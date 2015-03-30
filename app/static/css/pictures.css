@@ -1,10 +1,10 @@
-.picture-gallery 
+.picture-gallery
 {
   width: 100%;
   float: left;
 }
 
-.picture-gallery img 
+.picture-gallery img
 {
   width: 100%;
   height: auto;
@@ -14,7 +14,7 @@
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
 
- 
+
   -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
   box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
@@ -27,16 +27,28 @@
     -ms-transform: scale(1.1);
     transform: scale(1.1);
     cursor: pointer;
- 
+
     -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
     box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
 }
 
-.picture-gallery figure 
+.picture-gallery figure
 {
   display: block;
   float: left;
   margin: 0 10px 10px 0;
-  width: 200px;
+  width: 100%;
+}
+
+.picture-element
+{
+  height:400px;
+  display:flex;
+}
+
+.picture-helper
+{
+  margin:auto;
+  width:100%;
 }

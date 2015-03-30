@@ -5,18 +5,20 @@
 
     <div class="picture-gallery">
         {% for image in images %}
-            <figure>
+          <div class="col-md-4 picture-element">
+            <figure class="picture-helper">
                 <a href="images/{{image.image.name}}" data-size="{{image.image.size[0]}}x{{image.image.size[1]}}">
                     <img src="images/{{image.image.name}}" />
                 </a>
             </figure>
+          </div>
         {% endfor %}
     </div>
 
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
-        <!-- Background of PhotoSwipe. 
+        <!-- Background of PhotoSwipe.
              It's a separate element, as animating opacity is faster than rgba(). -->
         <div class="pswp__bg"></div>
 
@@ -56,7 +58,7 @@
                 </div>
 
                 <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div> 
+                    <div class="pswp__share-tooltip"></div>
                 </div>
 
                 <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
