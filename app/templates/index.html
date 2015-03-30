@@ -25,9 +25,10 @@
 
 {% include "header.html" %}
 
-{% include "menu-old.html" %}
-
 <div class="body-content">
+    <div class="menu_wrapper">
+        {% include "menu-old.html" %}
+    </div>
     <div class="b-psi-logo">
         <a href="/"><img src="{{ url_for('static', filename='images/psi-conf-logo.png') }}"></a>
     </div>

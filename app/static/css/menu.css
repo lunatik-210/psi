@@ -1,11 +1,15 @@
+.menu_wrapper
+{
+    position:relative;
+}
+
 .menu
 {
     margin-top: 24px;
     display: block;
-    position: fixed;
-    z-index: 1030;
-    top:50px;
-    left:20px;
+    position: absolute;
+    top: 230px;
+    left:-270px;
 }
 
 .dropdown-submenu
