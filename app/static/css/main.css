@@ -141,6 +141,45 @@
     word-wrap: break-word;
 }
 
+.portrait{
+    border-radius: 50%;
+    margin:auto;
+}
+
+
+.arrow-prev
+{
+  position: absolute;
+top: 50%;
+display: block;
+width: 20px;
+height: 20px;
+margin-top: -10px;
+padding: 0;
+  color: #fd7c07;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline;
+  left: 5px;
+}
+
+.arrow-next
+{
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  padding: 0;
+  color: #fd7c07;
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+  right : 5px;
+}
+
 .b-main-title
 {
   margin-top: 10px;
