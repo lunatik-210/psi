@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-13 13:29+0300\n"
+"POT-Creation-Date: 2015-03-31 10:06+0300\n"
 "PO-Revision-Date: 2015-03-01 23:01+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -18,53 +18,49 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 
-#: app/templates/index.html:28
+#: app/templates/header.html:3 app/templates/save.html:7
 msgid "ru"
 msgstr "en"
 
-#: app/templates/index.html:33
-msgid "Admin Page"
-msgstr "Админка"
+#: app/templates/header.html:6
+msgid "Ershov Informatics conference"
+msgstr "Конференция имени А.П. Ершова"
 
-#: app/templates/index.html:49
-msgid "Dates"
-msgstr "Важные даты"
-
-#: app/templates/index.html:62
-msgid "News"
-msgstr "Свежие новости"
-
-#: app/templates/main.html:4
-msgid "Content"
-msgstr "Информация"
-
-#: app/templates/menu.html:19
+#: app/templates/menu-old.html:19
 msgid "Welcome"
 msgstr "Главная"
 
-#: app/templates/menu.html:22 app/templates/video.html:9
+#: app/templates/menu-old.html:22 app/templates/video.html:9
 msgid "Video"
 msgstr "Видео"
 
-#: app/templates/menu.html:36 app/templates/pictures.html:4
+#: app/templates/menu-old.html:36 app/templates/pictures.html:5
 msgid "Pictures"
 msgstr "Фотографии"
 
-#: app/templates/menu.html:50
+#: app/templates/menu-old.html:50
 msgid "Programme"
 msgstr "Программа конференции"
 
-#: app/templates/menu.html:51 app/templates/speakers.html:4
+#: app/templates/menu-old.html:51 app/templates/speakers.html:4
 msgid "Keynote Speakers"
 msgstr "Основные докладчики"
 
-#: app/templates/menu.html:52
+#: app/templates/menu-old.html:52
 msgid "Call for Papers (PDF)"
 msgstr "Информационное письмо (PDF)"
 
-#: app/templates/menu.html:68
+#: app/templates/menu-old.html:68
 msgid "Previous PSI Editions"
 msgstr "Предыдущие конференции PSI"
+
+#: app/templates/save.html:25
+msgid "Dates"
+msgstr "Важные даты"
+
+#: app/templates/save.html:38
+msgid "News"
+msgstr "Свежие новости"
 
 #~ msgid "asd"
 #~ msgstr "русский"
@@ -77,4 +73,10 @@ msgstr "Предыдущие конференции PSI"
 
 #~ msgid "Log out"
 #~ msgstr "Выйти из системы"
+
+#~ msgid "Admin Page"
+#~ msgstr "Админка"
+
+#~ msgid "Content"
+#~ msgstr "Информация"
 
