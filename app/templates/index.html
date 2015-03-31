@@ -25,13 +25,23 @@
 
 {% include "header.html" %}
 
-<div class="body-content">
-    <div class="menu_wrapper">
-        {% include "menu-old.html" %}
-    </div>
-    <div class="b-psi-logo">
+<div class="menu_wrapper">
+    {% include "menu-old.html" %}
+</div>
+
+<div class="b-header-separator"></div>
+
+<div class="b-psi-logo">
+    {% if locale == 'ru' %}
+        <a href="/"><img src="{{ url_for('static', filename='images/psi-conf-logo-ru.png') }}"></a>
+    {% else %}
         <a href="/"><img src="{{ url_for('static', filename='images/psi-conf-logo.png') }}"></a>
-    </div>
+    {% endif %}
+</div>
+
+<div class="body-left-menu"></div>
+
+<div class="body-content">
     {% block content %}
     {% endblock %}
 </div>

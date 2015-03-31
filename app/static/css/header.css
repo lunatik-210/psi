@@ -1,25 +1,35 @@
 .b-header 
 {
     width: 100%;
-    height: 70px;
+    height: 60px;
 }
 
 .b-conf-info
 {
     display: inline-block;
-    width: 775px;
-    height: 70px;
+    width: 739px;
+    height: 60px;
     vertical-align: top;
     background-color: #424242;
-    border-right: 1px #d6f1ff solid;
-    margin-right: -3px;
+    margin-right: -4px;
+}
+
+.b-lang
+{
+    display: inline-block;
+    width: 55px;
+    height: 60px;
+    vertical-align: top;
+    background-color: #ed7d1a;
+    text-align: center;
+    margin-right: -4px;
 }
 
 .b-conf-info-wrapper
 {
     vertical-align: top;
     display: inline-block;
-    margin-left: 100px;
+    margin-left: 20px;
 }
 
 .b-conf-info-wrapper span
@@ -28,18 +38,17 @@
     font-size: 2em;
     font-weight: bold;
     display: inline-block;
-    margin-top: 18px;
+    margin-top: 13px;
     cursor: default;
 }
 
-.b-conf-info a
+.b-lang a
 {
     color: white;
     font-size: 2em;
     font-weight: bold;
     display: inline-block;
-    margin-top: 18px;
-    margin-left: 10px;
+    margin-top: 13px;
 }
 
 .b-conf-info-arraw
@@ -50,13 +59,21 @@
 .b-inno-logo
 {
     display: inline-block;
-    width: 248px;
-    height: 70px;
+    width: 230px;
+    height: 60px;
     vertical-align: top;
+    margin-right: -4px;
 }
 
 .b-inno-logo img
 {
-    width: 248px;
-    height: 70px;
+    width: 230px;
+    height: 60px;
+}
+
+.b-header-separator
+{
+    background-color: #ed7d1a;
+    width: 1024px;
+    height: 6px;
 }

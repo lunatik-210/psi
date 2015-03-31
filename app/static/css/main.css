@@ -141,9 +141,6 @@
     word-wrap: break-word;
 }
 
-
-
-
 .portrait{
     border-radius: 50%;
     margin:auto;
@@ -181,4 +178,33 @@ padding: 0;
   font-weight: bold;
   cursor: pointer;
   right : 5px;
+}
+
+.b-main-title
+{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #006bb3;
+  font-size: 2em;
+  font-weight: bold;
+  border-bottom: 1px #ed7d1a solid;
+}
+
+.b-main-item
+{
+  border-bottom: 1px #d2d2d4 solid;
+  margin-top: 15px;
+}
+
+.b-main-item:last-child
+{
+    border-bottom: none;
+}
+
+.b-main-separator
+{
+  background-color: #d2d2d4;
+  height: 4px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
