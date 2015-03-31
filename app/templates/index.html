@@ -29,8 +29,14 @@
     <div class="menu_wrapper">
         {% include "menu-old.html" %}
     </div>
+    <div class="b-header-separator">
+    </div>
     <div class="b-psi-logo">
-        <a href="/"><img src="{{ url_for('static', filename='images/psi-conf-logo.png') }}"></a>
+        {% if locale == 'ru' %}
+            <a href="/"><img src="{{ url_for('static', filename='images/psi-conf-logo-ru.png') }}"></a>
+        {% else %}
+            <a href="/"><img src="{{ url_for('static', filename='images/psi-conf-logo.png') }}"></a>
+        {% endif %}
     </div>
     {% block content %}
     {% endblock %}
