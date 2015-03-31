@@ -58,7 +58,7 @@ def get_page_data():
 def main():
     page = MainPage.objects.first()
 
-    return render_template('main.html', page=page, **get_page_data())
+    return render_template('main.html', page=page, speakers=Speaker.objects.all(), **get_page_data())
 
 
 def video():
