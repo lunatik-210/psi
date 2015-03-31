@@ -1,18 +1,23 @@
 {% extends "index.html" %}
 
 {% block content %}
+<div class="">
     <h1>{{ _('Pictures') }}</h1>
 
-    <div class="picture-gallery">
-        {% for image in images %}
-          <div class="col-md-4 picture-element">
-            <figure class="picture-helper">
-                <a href="images/{{image.image.name}}" data-size="{{image.image.size[0]}}x{{image.image.size[1]}}">
-                    <img src="images/{{image.image.name}}" />
-                </a>
-            </figure>
-          </div>
-        {% endfor %}
+    <div class="container block">
+
+        <div class="picture-gallery">
+            {% for image in images %}
+              <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 picture-element">
+                <figure class="picture-helper">
+                    <a href="images/{{image.image.name}}" data-size="{{image.image.size[0]}}x{{image.image.size[1]}}">
+                        <img src="images/{{image.image.name}}" />
+                    </a>
+                </figure>
+              </div>
+            {% endfor %}
+        </div>
+
     </div>
 
     <!-- Root element of PhotoSwipe. Must have class pswp. -->
@@ -77,4 +82,5 @@
     <script type="text/javascript">
         initPhotoSwipeFromDOM('.picture-gallery');
     </script>
+</div>
 {% endblock %}
