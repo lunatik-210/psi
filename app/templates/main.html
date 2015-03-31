@@ -3,30 +3,44 @@
 {% block content %}
 <div class="container block">
     <div class="raw">
-        
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <h1>{{ _('Dates') }}</h1>
+            <span class="b-main-title">{{ _('Dates') }}</span>
             {% for post in dates %}
-            <b><span>{{ post.date.strftime('%Y-%m-%d %H:%M:%S') }}</span><br>  </b>
-            {% if locale == 'ru' %}
-                <span>{{ post.description_ru|safe }}</span><br>
-            {% else %}
-                <span>{{ post.description|safe }}</span><br>
-            {% endif %}
+                <div class="b-main-item">
+                    <b><span>{{ post.date.strftime('%Y-%m-%d %H:%M:%S') }}</span></b>
+                    {% if locale == 'ru' %}
+                        <span>{{ post.description_ru|safe }}</span><br>
+                    {% else %}
+                        <span>{{ post.description|safe }}</span><br>
+                    {% endif %}
+                </div>
             {% endfor %}
         </div>
         
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <h1>{{ _('News') }}</h1>
+            <span class="b-main-title">{{ _('News') }}</span>
             {% for news_item in news %}
-            <b><span>{{ news_item.date.strftime('%Y-%m-%d %H:%M:%S') }}</span><br></b>
-            {% if locale == 'ru' %}
-                <span>{{ news_item.content_ru|safe }}</span><br>
-            {% else %}
-                <span>{{ news_item.content|safe }}</span><br>
-            {% endif %}
+                <div class="b-main-item">
+                    <b><span>{{ news_item.date.strftime('%Y-%m-%d %H:%M:%S') }}</span></b>
+                    {% if locale == 'ru' %}
+                        <span>{{ news_item.content_ru|safe }}</span><br>
+                    {% else %}
+                        <span>{{ news_item.content|safe }}</span><br>
+                    {% endif %}
+                </div>
             {% endfor %}
         </div>
     </div>
 </div>
+<br>
+<div class="b-main-separator"></div>
+<br>
+<div class="b-main-separator"></div>
+<div class="container block">
+    <span>Materials</span>
+    <div class="raw">
+    </div>
+</div>
+
+
 {% endblock %}
