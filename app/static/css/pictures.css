@@ -35,17 +35,21 @@
 
 .picture-gallery figure
 {
-  display: block;
-  float: left;
-  /*margin: 0 10px 10px 0;*/
-  width: 100%;
-}
 
-.picture-element
-{
-  height:400px;
+  float: left;
+  margin: auto;
+  height:300px;
   display:flex;
 }
+
+
+.demo-gallery a {
+    display: block;
+    float: left;
+    margin: auto;
+    line-height: 0;
+}
+
 
 .picture-helper
 {
