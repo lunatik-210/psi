@@ -67,12 +67,12 @@
       </div>
 </div>
 </div>
-<div class="b-main-separator"></div>
+<div class="b-main-separator"></div><br>
 <div class="container block">
     <span class="b-main-centered-title">{{_('Materials')}}</span>
     <div class="b-materials">
-        <a href="/"><img src="{{ url_for('static', filename='images/photo.png') }}"></a>
-        <a href="/"><img src="{{ url_for('static', filename='images/video.png') }}"></a>
+        <a class="b-video" href="{{ url_for('main.video') }}"></a>
+        <a class="b-photo" href="{{ url_for('main.pictures') }}"></a>
     </div>
 </div>
 

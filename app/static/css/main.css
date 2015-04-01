@@ -233,10 +233,30 @@ padding: 0;
 .b-materials a
 {
     display: inline-block;
-    margin-left: 50px;
     margin-right: 50px;
+    margin-left: 50px;
 }
 
-.b-materials img:hover
+.b-video
 {
+    background-image: url("../images/video.png");
+    width: 151px;
+    height: 151px;
+}
+
+.b-photo
+{
+    background-image: url("../images/photo.png");
+    width: 151px;
+    height: 151px;
+}
+
+.b-video:hover
+{
+    background-image: url("../images/video_hover.png");
+}
+
+.b-photo:hover
+{
+    background-image: url("../images/photo_hover.png");
 }
