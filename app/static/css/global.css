@@ -89,3 +89,12 @@ body
 {
   width: 307px;
 }
+
+.b-content-title
+{
+  color: #006bb3;
+  font-size: 2em;
+  font-weight: bold;
+  margin-left: 30px;
+  margin-top: 10px;
+}

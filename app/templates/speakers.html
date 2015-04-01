@@ -1,7 +1,7 @@
 {% extends "index.html" %}
 
 {% block content %}
-    <h1>{{ _('Keynote Speakers') }}</h1>
+    <span class="b-content-title">{{ _('Keynote Speakers') }}</span>
 
     {% for speaker in speakers %}
       {% if locale == 'en' %}
