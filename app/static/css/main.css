@@ -223,3 +223,20 @@ padding: 0;
 {
 
 }
+
+.b-materials
+{
+  vertical-align: center;
+  text-align: center;
+}
+
+.b-materials a
+{
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.b-materials img:hover
+{
+}
