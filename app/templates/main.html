@@ -47,7 +47,8 @@
 <div class="b-main-separator"></div><br>
 <div class="container block">
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
-      <h1> {{_('Keynote Speakers')}} </h1>
+
+      <span class="b-main-centered-title">{{_('Keynote Speakers')}}</span>
 
       <div data-slick='{"slidesToShow": 2, "slidesToScroll": 1, "prevArrow": "<span class=\"arrow-prev \">&lt;</span>", "nextArrow": "<span class=\"arrow-next \">&gt;</span>"}'>
         {% for speaker in speakers %}
@@ -68,7 +69,7 @@
 </div>
 <div class="b-main-separator"></div>
 <div class="container block">
-    <span>Materials</span>
+    <span class="b-main-centered-title">{{_('Materials')}}</span>
     <div class="raw">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <a href="/"><img src="{{ url_for('static', filename='images/photo.png') }}"></a>
