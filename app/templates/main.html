@@ -57,7 +57,7 @@
                 <p><a href="{{ speaker.bio_reference_link }}"><em>{{ speaker.name }}</em><br>
                   {{ speaker.country }}</a></p>
             {% else %}
-            <a href="{{ speaker.bio_reference_link }}"><img src="images/{{ speaker.photo.name }}" alt="{{ speaker.name }}"></a>
+            <a href="{{ speaker.bio_reference_link }}"><img class="portrait" src="images/{{ speaker.photo.name }}" alt="{{ speaker.name }}"></a>
                 <p><a href="{{ speaker.bio_reference_link }}"><em>{{ speaker.name_ru }}</em><br>
                   {{ speaker.country_ru }}</a></p>
           {% endif %}
