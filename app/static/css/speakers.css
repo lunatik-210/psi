@@ -1,8 +1,9 @@
-div.keynote-line 
+div.keynote-line
 {
     margin-bottom: 40px;
     padding: 10px;
-    
+    min-height: 250px;
+
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -18,7 +19,7 @@ div.keynote-line:hover
     box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
 }
 
-div.keynote 
+div.keynote
 {
     float: left;
     font-size: 90%;
@@ -31,19 +32,19 @@ div.keynote:hover {
   cursor: pointer;
 }
 
-.keynote img 
+.keynote img
 {
   max-width: 220px;
   margin-bottom: 10px;
   margin-left: 20px;
   margin-top: 20px;
-  
+
   -webkit-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
   -moz-box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
   box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
 }
 
-div.keynote-text 
+div.keynote-text
 {
     word-wrap: break-word;
     padding: 10px;
