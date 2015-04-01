@@ -136,11 +136,6 @@
     opacity: 1;
 }
 
-.page-content
-{
-    word-wrap: break-word;
-}
-
 .portrait{
     border-radius: 50%;
     margin:auto;
