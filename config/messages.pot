@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-03-31 10:06+0300\n"
+"POT-Creation-Date: 2015-04-01 11:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,29 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.3\n"
 
-#: app/templates/header.html:3 app/templates/save.html:7
+#: app/templates/header.html:5
+msgid "Ershov Informatics conference"
+msgstr ""
+
+#: app/templates/header.html:10
 msgid "ru"
 msgstr ""
 
-#: app/templates/header.html:6
-msgid "Ershov Informatics conference"
+#: app/templates/main.html:18
+msgid "Dates"
+msgstr ""
+
+#: app/templates/main.html:32
+msgid "News"
+msgstr ""
+
+#: app/templates/main.html:51 app/templates/menu-old.html:51
+#: app/templates/speakers.html:4
+msgid "Keynote Speakers"
+msgstr ""
+
+#: app/templates/main.html:72
+msgid "Materials"
 msgstr ""
 
 #: app/templates/menu-old.html:19
@@ -41,23 +58,11 @@ msgstr ""
 msgid "Programme"
 msgstr ""
 
-#: app/templates/menu-old.html:51 app/templates/speakers.html:4
-msgid "Keynote Speakers"
-msgstr ""
-
 #: app/templates/menu-old.html:52
 msgid "Call for Papers (PDF)"
 msgstr ""
 
 #: app/templates/menu-old.html:68
 msgid "Previous PSI Editions"
-msgstr ""
-
-#: app/templates/save.html:25
-msgid "Dates"
-msgstr ""
-
-#: app/templates/save.html:38
-msgid "News"
 msgstr ""
 

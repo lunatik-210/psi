@@ -190,6 +190,16 @@ padding: 0;
   border-bottom: 1px #ed7d1a solid;
 }
 
+.b-main-centered-title
+{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #006bb3;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
 .b-main-item
 {
   border-bottom: 1px #d2d2d4 solid;
