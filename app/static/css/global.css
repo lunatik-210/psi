@@ -76,18 +76,18 @@ body
 
 .b-psi-logo
 {
-  width: 1024px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
 }
 
 .block
 {
-  width: 717px;
+  width: 100%;
 }
 
 .block-menu
 {
-  width: 307px;
+  width: 30%;
 }
 
 .b-content-title
@@ -102,7 +102,7 @@ body
 .b-footer
 {
   background-color: #006bb3;
-  width: 1024px;
+  width: 100%;
   height: 80px;
 }
 
