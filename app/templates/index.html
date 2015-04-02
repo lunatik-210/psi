@@ -29,9 +29,9 @@
 
 <div class="b-psi-logo">
     {% if locale == 'ru' %}
-        <a href="{{ url_for('main.main') }}"><img src="{{ url_for('static', filename='images/psi-conf-logo-ru.png') }}"></a>
+        <a href="{{ url_for('main.main') }}"><img class="b-big-banner" src="{{ url_for('static', filename='images/psi-conf-logo-ru.png') }}"></a>
     {% else %}
-        <a href="{{ url_for('main.main') }}"><img src="{{ url_for('static', filename='images/psi-conf-logo.png') }}"></a>
+        <a href="{{ url_for('main.main') }}"><img class="b-big-banner" src="{{ url_for('static', filename='images/psi-conf-logo.png') }}"></a>
     {% endif %}
 </div>
 

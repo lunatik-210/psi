@@ -113,3 +113,8 @@ body
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.b-big-banner
+{
+  width: 100%;
+}

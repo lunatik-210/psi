@@ -7,7 +7,7 @@
 .b-conf-info
 {
     display: inline-block;
-    width: 739px;
+    width: 73%;
     height: 60px;
     vertical-align: top;
     background-color: #424242;
@@ -17,7 +17,7 @@
 .b-lang
 {
     display: inline-block;
-    width: 55px;
+    width: 5%;
     height: 60px;
     vertical-align: top;
     background-color: #ed7d1a;
@@ -59,21 +59,15 @@
 .b-inno-logo
 {
     display: inline-block;
-    width: 230px;
+    width: 22%;
     height: 60px;
     vertical-align: top;
-    float: right;
-}
-
-.b-inno-logo img
-{
-    width: 230px;
-    height: 60px;
+    background-image: url('../images/inno_logo.png');
 }
 
 .b-header-separator
 {
     background-color: #ed7d1a;
-    width: 1024px;
+    width: 100%;
     height: 6px;
 }
