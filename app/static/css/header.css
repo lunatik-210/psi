@@ -62,6 +62,7 @@
     width: 22%;
     height: 60px;
     vertical-align: top;
+    float: right;
     background-image: url('../images/inno_logo.png');
 }
 
