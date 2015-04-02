@@ -250,3 +250,11 @@ padding: 0;
 {
     background-image: url("../images/photo_hover.png");
 }
+
+.b-banner
+{
+    background-image: url("../images/banner.jpg");
+    width: 160px;
+    height: 600px;
+    margin: 0 auto;
+}

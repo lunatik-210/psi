@@ -62,7 +62,7 @@
     width: 230px;
     height: 60px;
     vertical-align: top;
-    margin-right: -4px;
+    float: right;
 }
 
 .b-inno-logo img

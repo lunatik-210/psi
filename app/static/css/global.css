@@ -62,7 +62,7 @@ body
   width: 30%;
   display: inline-block;
   vertical-align: top;
-  margin-right: -4px;
+  float: left;
 }
 
 .body-content
