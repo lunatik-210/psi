@@ -253,10 +253,10 @@ padding: 0;
 
 .b-banner
 {
-    background-image: url("../images/banner.jpg");
+    background-image: url("../images/banner-grey.jpg");
     width: 160px;
     height: 600px;
     margin: 0 auto;
     position: relative;
-    top: 440px;
+    top: 420px;
 }
