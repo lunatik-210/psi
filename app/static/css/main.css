@@ -139,18 +139,19 @@
 .portrait{
     border-radius: 50%;
     margin:auto;
+    height: 200px;
 }
 
 
 .arrow-prev
 {
   position: absolute;
-top: 50%;
-display: block;
-width: 20px;
-height: 20px;
-margin-top: -10px;
-padding: 0;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  padding: 0;
   color: #fd7c07;
   font-size: 2em;
   font-weight: bold;
