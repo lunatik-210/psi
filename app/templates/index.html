@@ -39,7 +39,7 @@
     <div class="menu_wrapper">
         {% include "menu-old.html" %}
     </div>
-    <div class="b-banner"></div>
+    <div class="b-showcase"></div>
 </div>
 
 <div class="body-content">
@@ -52,17 +52,17 @@
 <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
 
 <script type="text/javascript">
-    if ($('#back-to-top').length) 
+    if ($('#back-to-top').length)
     {
         var scrollTrigger = 100, // px
-            backToTop = function () 
+            backToTop = function ()
             {
                 var scrollTop = $(window).scrollTop();
-                if (scrollTop > scrollTrigger) 
+                if (scrollTop > scrollTrigger)
                 {
                     $('#back-to-top').addClass('show');
-                } 
-                else 
+                }
+                else
                 {
                     $('#back-to-top').removeClass('show');
                 }
@@ -70,12 +70,12 @@
 
         backToTop();
 
-        $(window).on('scroll', function () 
+        $(window).on('scroll', function ()
         {
             backToTop();
         });
 
-        $('#back-to-top').on('click', function (e) 
+        $('#back-to-top').on('click', function (e)
         {
             e.preventDefault();
             $('html,body').animate( { scrollTop: 0 }, 700);
