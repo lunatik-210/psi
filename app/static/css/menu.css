@@ -81,3 +81,8 @@
 .dropdown-menu li {
     margin: 5px;
 }
+
+.body-left-menu
+{
+    width: 300px;
+}
