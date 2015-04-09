@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-04-01 11:52+0300\n"
+"POT-Creation-Date: 2015-04-09 13:12+0300\n"
 "PO-Revision-Date: 2015-03-01 23:01+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -27,19 +27,42 @@ msgid "ru"
 msgstr "en"
 
 #: app/templates/main.html:18
+msgid ""
+"The Perspectives of System Informatics (PSI) conference series is a forum"
+" for academic and industrial researchers, developers and users working on"
+" topics relating to computer, software and information sciences. The "
+"conference serves to bridge the gaps between different communities whose "
+"research areas are covered by but not limited to foundations of program "
+"and system development and analysis, programming methodology and software"
+" engineering, and information technologies. The PSI forum provides a "
+"venue for such communities at which common problems, methods and "
+"methodologies can be discussed and explored. In doing so, PSI aims to "
+"support researchers in their quest to improve the reliability, "
+"flexibility and efficiency of methods, algorithms and tools for "
+"developing computer, software and information systems."
+msgstr ""
+"«Перспективы систем информатики» – это форум, на котором собираются ученые,"
+" разработчики и пользователи программного обеспечения, работающие как в науке, "
+"так и в промышленности. Цель конференции – представление и глубокое обсуждение "
+"передовых достижений в таких областях, как теоретические основы анализа и "
+"разработки программ и систем, методология и технология программирования, новые"
+" информационные технологии. Важной задачей конференции является «наведение мостов»"
+" между научными и профессиональными IT-сообществами."
+
+#: app/templates/main.html:24
 msgid "Dates"
 msgstr "Важные даты"
 
-#: app/templates/main.html:32
+#: app/templates/main.html:38
 msgid "News"
 msgstr "Свежие новости"
 
-#: app/templates/main.html:51 app/templates/menu-old.html:51
+#: app/templates/main.html:56 app/templates/menu-old.html:51
 #: app/templates/speakers.html:4
 msgid "Keynote Speakers"
 msgstr "Основные докладчики"
 
-#: app/templates/main.html:72
+#: app/templates/main.html:77
 msgid "Materials"
 msgstr "Материалы"
 
@@ -47,7 +70,7 @@ msgstr "Материалы"
 msgid "Welcome"
 msgstr "Главная"
 
-#: app/templates/menu-old.html:22 app/templates/video.html:9
+#: app/templates/menu-old.html:22 app/templates/video.html:4
 msgid "Video"
 msgstr "Видео"
 

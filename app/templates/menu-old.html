@@ -17,39 +17,9 @@
 
 <ul class="menu dropdown-menu">
     <li><a href="/">{{ _('Welcome') }}</a></li>
-
-    <li {% if video_tags %} class="dropdown-submenu" {% endif %}>
-        <a href="{{ url_for('main.video') }}">{{ _('Video') }}</a>
-        {% if video_tags %} 
-            <ul class="dropdown-menu">
-                {% for tag in video_tags %}
-                    {% if locale == 'en' %}
-                        <li><a href="{{ url_for('main.video', tag=tag.get('en')) }}">{{ tag.get('en') }}</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('main.video', tag=tag.get('en')) }}">{{ tag.get('ru') }}</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </li>
-
-    <li {% if picture_tags %} class="dropdown-submenu" {% endif %} > <a href="{{ url_for('main.pictures') }}">{{ _('Pictures') }}</a>
-        {% if picture_tags %} 
-            <ul class="dropdown-menu">
-                {% for tag in picture_tags %}
-                    {% if locale == 'en' %}
-                        <li><a href="{{ url_for('main.pictures', tag=tag.get('en')) }}">{{ tag.get('en') }}</a></li>
-                    {% else %}
-                        <li><a href="{{ url_for('main.pictures', tag=tag.get('en')) }}">{{ tag.get('ru') }}</a></li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
-        {% endif %}
-    </li>
-
     <li><a href="http://www.easychair.org/smart-program/PSI2015/index.html">{{ _('Programme') }}</a></li>
-    <li><a href="{{ url_for('main.speakers') }}">{{ _('Keynote Speakers') }}</a></li>
     <li><a href="{{ url_for('static', filename='data/psi_2015_cfp.pdf') }}">{{ _('Call for Papers (PDF)') }}</a></li>
+    <li><a href="{{ url_for('main.speakers') }}">{{ _('Keynote Speakers') }}</a></li>
 
     {% for child_node in data %}
         {% if locale == 'en' %}
@@ -83,5 +53,34 @@
                     <li><a href="http://psi.nsc.ru/ru/psi99"/index>PSI'99</a></li>
                 {% endif %}
         </ul>
+    </li>
+
+    <li {% if video_tags %} class="dropdown-submenu" {% endif %}>
+        <a href="{{ url_for('main.video') }}">{{ _('Video') }}</a>
+        {% if video_tags %} 
+            <ul class="dropdown-menu">
+                {% for tag in video_tags %}
+                    {% if locale == 'en' %}
+                        <li><a href="{{ url_for('main.video', tag=tag.get('en')) }}">{{ tag.get('en') }}</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('main.video', tag=tag.get('en')) }}">{{ tag.get('ru') }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+
+    <li {% if picture_tags %} class="dropdown-submenu" {% endif %} > <a href="{{ url_for('main.pictures') }}">{{ _('Pictures') }}</a>
+        {% if picture_tags %} 
+            <ul class="dropdown-menu">
+                {% for tag in picture_tags %}
+                    {% if locale == 'en' %}
+                        <li><a href="{{ url_for('main.pictures', tag=tag.get('en')) }}">{{ tag.get('en') }}</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('main.pictures', tag=tag.get('en')) }}">{{ tag.get('ru') }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
     </li>
 </ul>

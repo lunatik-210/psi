@@ -114,6 +114,15 @@ body
   margin-bottom: 10px;
 }
 
+.b-conf-descr
+{
+  margin-left: 30px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 110%;
+}
+
 .b-big-banner
 {
   width: 100%;
