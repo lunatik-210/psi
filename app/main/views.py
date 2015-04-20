@@ -47,8 +47,8 @@ def reconstruct(pages):
 def get_page_data():
     locale = request.cookies.get(constants.LOCALE_TOKEN) or constants.DEFAULT_LOCALE
     data = reconstruct(Page.objects.all())
-    return dict(dates=ImportantDate.objects.all(),
-                news=NewsItem.objects.all(),
+    return dict(dates=ImportantDate.objects.order_by("date"),
+                news=NewsItem.objects.order_by("date"),
                 locale=locale,
                 video_tags=get_tags(Video),
                 data=data,
