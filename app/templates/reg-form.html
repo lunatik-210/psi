@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+
+{% block content %}
+<div>
+    {% if locale == 'en' %}
+        <iframe src="http://micesystem.ru/external/iframe/forms.php?alias=innopolis2015-visitors-eng" height="1450" width="702" border="0" frameborder=no style="padding:0; margin:7px; border:0 !important;overflow:hidden" scrolling="no"></iframe>
+    {% else %}
+        <iframe src="http://micesystem.ru/external/iframe/forms.php?alias=innopolis2015-visitors-rus" height="900" width="702" border="0" frameborder=no style="padding:0; margin:7px; border:0 !important;overflow:hidden" scrolling="no"></iframe>
+    {% endif %}
+</div>
+{% endblock %}
