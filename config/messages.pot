@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-04-09 13:12+0300\n"
+"POT-Creation-Date: 2015-06-19 14:34+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,7 @@ msgstr ""
 msgid "News"
 msgstr ""
 
-#: app/templates/main.html:56 app/templates/menu-old.html:51
+#: app/templates/main.html:56 app/templates/menu-old.html:23
 #: app/templates/speakers.html:4
 msgid "Keynote Speakers"
 msgstr ""
@@ -62,23 +62,27 @@ msgstr ""
 msgid "Welcome"
 msgstr ""
 
-#: app/templates/menu-old.html:22 app/templates/video.html:4
-msgid "Video"
-msgstr ""
-
-#: app/templates/menu-old.html:36 app/templates/pictures.html:5
-msgid "Pictures"
-msgstr ""
-
-#: app/templates/menu-old.html:50
+#: app/templates/menu-old.html:20 app/templates/menu-old.html:21
 msgid "Programme"
 msgstr ""
 
-#: app/templates/menu-old.html:52
+#: app/templates/menu-old.html:22
 msgid "Call for Papers (PDF)"
 msgstr ""
 
-#: app/templates/menu-old.html:68
+#: app/templates/menu-old.html:24
+msgid "Registration"
+msgstr ""
+
+#: app/templates/menu-old.html:40
 msgid "Previous PSI Editions"
+msgstr ""
+
+#: app/templates/menu-old.html:61 app/templates/video.html:4
+msgid "Video"
+msgstr ""
+
+#: app/templates/menu-old.html:75 app/templates/pictures.html:5
+msgid "Pictures"
 msgstr ""
 

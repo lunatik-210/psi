@@ -2,10 +2,10 @@
 
 {% block content %}
     {% if locale == 'en' %}
-    	<span class="b-content-title">{{ page.title }}</span>
-    	<div class="page-content">{{ page.text|safe }}</div>
+        <span class="b-content-title">{{ page.title }}</span>
+        <div class="page-content">{{ page.text|safe }}</div>
     {% else %}
-    	<span class="b-content-title">{{ page.title_ru }}</span>
+        <span class="b-content-title">{{ page.title_ru }}</span>
         <div class="page-content">{{ page.text_ru|safe }}</div>
     {% endif %}
 {% endblock %}

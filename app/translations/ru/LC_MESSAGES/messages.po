@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2015-04-09 13:12+0300\n"
+"POT-Creation-Date: 2015-06-19 14:34+0300\n"
 "PO-Revision-Date: 2015-03-01 23:01+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -41,13 +41,14 @@ msgid ""
 "flexibility and efficiency of methods, algorithms and tools for "
 "developing computer, software and information systems."
 msgstr ""
-"«Перспективы систем информатики» – это форум, на котором собираются ученые,"
-" разработчики и пользователи программного обеспечения, работающие как в науке, "
-"так и в промышленности. Цель конференции – представление и глубокое обсуждение "
-"передовых достижений в таких областях, как теоретические основы анализа и "
-"разработки программ и систем, методология и технология программирования, новые"
-" информационные технологии. Важной задачей конференции является «наведение мостов»"
-" между научными и профессиональными IT-сообществами."
+"«Перспективы систем информатики» – это форум, на котором собираются "
+"ученые, разработчики и пользователи программного обеспечения, работающие "
+"как в науке, так и в промышленности. Цель конференции – представление и "
+"глубокое обсуждение передовых достижений в таких областях, как "
+"теоретические основы анализа и разработки программ и систем, методология "
+"и технология программирования, новые информационные технологии. Важной "
+"задачей конференции является «наведение мостов» между научными и "
+"профессиональными IT-сообществами."
 
 #: app/templates/main.html:24
 msgid "Dates"
@@ -57,7 +58,7 @@ msgstr "Важные даты"
 msgid "News"
 msgstr "Свежие новости"
 
-#: app/templates/main.html:56 app/templates/menu-old.html:51
+#: app/templates/main.html:56 app/templates/menu-old.html:23
 #: app/templates/speakers.html:4
 msgid "Keynote Speakers"
 msgstr "Основные докладчики"
@@ -70,25 +71,29 @@ msgstr "Материалы"
 msgid "Welcome"
 msgstr "Главная"
 
-#: app/templates/menu-old.html:22 app/templates/video.html:4
-msgid "Video"
-msgstr "Видео"
-
-#: app/templates/menu-old.html:36 app/templates/pictures.html:5
-msgid "Pictures"
-msgstr "Фотографии"
-
-#: app/templates/menu-old.html:50
+#: app/templates/menu-old.html:20 app/templates/menu-old.html:21
 msgid "Programme"
 msgstr "Программа конференции"
 
-#: app/templates/menu-old.html:52
+#: app/templates/menu-old.html:22
 msgid "Call for Papers (PDF)"
 msgstr "Информационное письмо (PDF)"
 
-#: app/templates/menu-old.html:68
+#: app/templates/menu-old.html:24
+msgid "Registration"
+msgstr "Регистрация"
+
+#: app/templates/menu-old.html:40
 msgid "Previous PSI Editions"
 msgstr "Предыдущие конференции PSI"
+
+#: app/templates/menu-old.html:61 app/templates/video.html:4
+msgid "Video"
+msgstr "Видео"
+
+#: app/templates/menu-old.html:75 app/templates/pictures.html:5
+msgid "Pictures"
+msgstr "Фотографии"
 
 #~ msgid "asd"
 #~ msgstr "русский"

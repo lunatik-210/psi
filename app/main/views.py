@@ -88,6 +88,10 @@ def speakers():
                            speakers=Speaker.objects.all(), **get_page_data())
 
 
+def registration():
+    return render_template('reg-form.html', **get_page_data())
+
+
 def menu():
     title = request.args.get('title', None)
 
