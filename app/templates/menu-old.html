@@ -21,7 +21,7 @@
     <!--<li><a href="{{ url_for('static', filename='data/Draft_Program_PSI_2015.pdf') }}">{{ _('Programme') }}</a></li>-->
     <li><a href="{{ url_for('static', filename='data/PSI_2015_cfp_-_extended.pdf') }}">{{ _('Call for Papers (PDF)') }}</a></li>
     <li><a href="{{ url_for('main.speakers') }}">{{ _('Keynote Speakers') }}</a></li>
-    <!--<li><a href="{{ url_for('main.registration') }}">{{ _('Registration') }}</a></li>-->
+    <li><a href="{{ url_for('main.registration') }}">{{ _('Registration') }}</a></li>
 
     {% for child_node in data %}
         {% if locale == 'en' %}
